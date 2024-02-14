@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg';
 import './App.css';
 import { mockDataForPlayer } from './mockData.js';
 import { findWinLoss } from './ExtractStats.jsx';
+import { SearchBar } from './components/SearchBar.jsx';
 
 function App() {
   const [processedData, setProcessedData] = useState({hasData: false, isLoading: false});
@@ -37,18 +38,21 @@ function App() {
 
   return (
     <>
-      <div className="card">
-        <h2 className='text-3xl font-bold underline'>Enter player id:</h2>
-        <button className='btn btn-primary' onClick={() => setTargetPlayer("__Bear__")}>
-          Query
-        </button>
-      </div>
-      {processedData.hasData ? (
-        <div>
-          {processedData.winStats.winRatio}
+      <SearchBar></SearchBar>
+      <div className='container mx-auto my-32'>
+        <div className="card">
+          <h2 className='text-3xl font-bold underline'>Enter player id:</h2>
+          <button className='btn btn-primary' onClick={() => setTargetPlayer("__Bear__")}>
+            Query
+          </button>
         </div>
-      ) : null}
-    </>
+        {processedData.hasData && (
+          <div>
+            {processedData.winStats.winRatio}
+          </div>
+        )}
+      </div>
+      </>
   )
 }
 
