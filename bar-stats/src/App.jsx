@@ -5,6 +5,8 @@ import './App.css';
 import { mockDataForPlayer } from './mockData.js';
 import { findWinLoss } from './ExtractStats.jsx';
 import { SearchBar } from './components/SearchBar.jsx';
+import { WinLossChart } from './components/WinLossChart.jsx';
+import { WinLossStats } from './components/WinLossStats.jsx';
 
 function App() {
   const [processedData, setProcessedData] = useState({hasData: false, isLoading: false});
@@ -34,25 +36,25 @@ function App() {
       fetchAndProcess(targetPlayer);
   }, [targetPlayer])
 
-  const mockData = mockDataForPlayer.data;
 
   return (
     <>
       <SearchBar setPlayerId={setTargetPlayer}></SearchBar>
-      <div className='container mx-auto my-32'>
-        <div className="card">
-          <h2 className='text-3xl font-bold underline'>Enter player id:</h2>
-          <button className='btn btn-primary' onClick={() => setTargetPlayer("__Bear__")}>
-            Query
-          </button>
-        </div>
-        {processedData.hasData && (
-          <div>
-            {processedData.winStats.winRatio}
+      <div className='container mx-auto my-40 grid grid-cols-12 gap-x-4'>
+        {processedData.hasData && (<>
+          <div className='col-span-4 h-56'>
+            <div className="stats shadow w-full h-full">
+              <div className="stat">
+                <WinLossChart data={processedData}/>
+              </div>
+            </div>
           </div>
-        )}
+          <div className='col-span-8 h-56'>
+            <WinLossStats data={processedData}/>
+          </div>
+        </>)}
       </div>
-      </>
+    </>
   )
 }
 

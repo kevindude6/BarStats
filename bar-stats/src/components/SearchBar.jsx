@@ -5,7 +5,7 @@ export const SearchBar = (props) => {
   const [inputContent, setInputContent] = useState("");
 
   return (
-    <div className="fixed top-0 left-0 right-0 px-6 pt-3 h-32 bg-base-200">
+    <div className="fixed top-0 left-0 right-0 px-6 pt-3 h-32 bg-base-100">
       <div className="prose w-full">
         <h2 className="text-base-content">BAR Player Search</h2>
       </div>
