@@ -38,7 +38,7 @@ function App() {
 
   return (
     <>
-      <SearchBar></SearchBar>
+      <SearchBar setPlayerId={setTargetPlayer}></SearchBar>
       <div className='container mx-auto my-32'>
         <div className="card">
           <h2 className='text-3xl font-bold underline'>Enter player id:</h2>
