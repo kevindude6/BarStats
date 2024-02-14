@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
@@ -6,32 +6,48 @@ import { mockDataForPlayer } from './mockData.js';
 import { findWinLoss } from './ExtractStats.jsx';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [processedData, setProcessedData] = useState({hasData: false, isLoading: false});
+  const [targetPlayer, setTargetPlayer] = useState("");
+
+
+  useEffect(() => {
+    const fetchAndProcess = async (playerId) => {
+      const initialData = { 
+        hasData: false,
+        isLoading: true,
+      }
+      setProcessedData(initialData);
+
+      // This will be a query
+      const receivedData = mockDataForPlayer.data;
+
+      // Process data
+      const processedData = { }
+      processedData.winStats = findWinLoss(receivedData, targetPlayer);
+
+      processedData.hasData = true;
+      processedData.isLoading = false;
+      setProcessedData(processedData);
+    }
+    if(targetPlayer!= "")
+      fetchAndProcess(targetPlayer);
+  }, [targetPlayer])
 
   const mockData = mockDataForPlayer.data;
-  console.log(findWinLoss(mockData, "__Bear__"));
+
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <h2>Enter player id:</h2>
+        <button onClick={() => setTargetPlayer("__Bear__")}>
+          Query
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {processedData.hasData ? (
+        <div>
+          {processedData.winStats.winRatio}
+        </div>
+      ) : null}
     </>
   )
 }
