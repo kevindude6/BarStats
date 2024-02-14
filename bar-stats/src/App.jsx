@@ -39,7 +39,7 @@ function App() {
     <>
       <div className="card">
         <h2 className='text-3xl font-bold underline'>Enter player id:</h2>
-        <button onClick={() => setTargetPlayer("__Bear__")}>
+        <button className='btn btn-primary' onClick={() => setTargetPlayer("__Bear__")}>
           Query
         </button>
       </div>
