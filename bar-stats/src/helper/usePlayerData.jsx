@@ -21,9 +21,12 @@ export const usePlayerData = (targetPlayerId) => {
 
       const allReplayIds = receivedData.map((game) => game.id);
       const allReplayData = await queryAllReplays(allReplayIds, null);
+
+      //downloadData(allReplayData);
       // Process data
       const processedData = {};
       processedData.winStats = findWinLoss(receivedData, playerId);
+      processedData.factionStats = countFactions(allReplayData, playerId);
 
       processedData.hasData = true;
       processedData.isLoading = false;
@@ -54,3 +57,46 @@ const queryAllReplays = async (allReplayIds, outputObj) => {
   }
   return outputObj;
 };
+
+const downloadData = (replays) => {
+  const blob = new Blob([JSON.stringify(replays)]);
+  const link = document.createElement("a");
+  document.body.appendChild(link);
+  const url = window.URL.createObjectURL(blob);
+  link.href = url;
+  link.download = "test.json";
+  link.click();
+  document.removeChild(link);
+};
+
+const countFactions = (replayData, targetPlayer) => {
+  const outObj = { Cortex: 0, Armada: 0, Legion: 0 };
+  Object.values(replayData).forEach((game) => {
+    const player = findTargetPlayerObj(game, targetPlayer);
+    outObj[player.faction] = outObj[player.faction] + 1;
+  });
+  return outObj;
+};
+
+const findTargetPlayerId = (gameData, targetPlayer) => {
+  for (const team of gameData.AllyTeams) {
+    const player = team.Players.find((p) => p.name == targetPlayer);
+    if (player != null) return player.playerId;
+  }
+  return -1;
+};
+const findTargetPlayerObj = (gameData, targetPlayer) => {
+  for (const team of gameData.AllyTeams) {
+    const player = team.Players.find((p) => p.name == targetPlayer);
+    if (player != null) return player;
+  }
+};
+
+/*
+const addTargetPlayerIds = (replayData, targetPlayer) => {
+  replayData.forEach((replay) => {
+    const foundId = findTargetPlayerId(replay, targetPlayer);
+    replay.TARGETPLAYER = foundId;
+  });
+};
+*/
