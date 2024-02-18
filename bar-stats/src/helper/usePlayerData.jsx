@@ -22,11 +22,13 @@ export const usePlayerData = (targetPlayerId) => {
       const allReplayIds = receivedData.map((game) => game.id);
       const allReplayData = await queryAllReplays(allReplayIds, null);
 
+      const processedReplays = Object.values(allReplayData).map((replay) => processReplay(replay, playerId));
+
       //downloadData(allReplayData);
       // Process data
       const processedData = {};
       processedData.winStats = findWinLoss(receivedData, playerId);
-      processedData.factionStats = countFactions(allReplayData, playerId);
+      processedData.factionStats = countFactions(processedReplays);
 
       processedData.hasData = true;
       processedData.isLoading = false;
@@ -69,12 +71,38 @@ const downloadData = (replays) => {
   document.removeChild(link);
 };
 
-const countFactions = (replayData, targetPlayer) => {
-  const outObj = { Cortex: 0, Armada: 0, Legion: 0 };
-  Object.values(replayData).forEach((game) => {
-    const player = findTargetPlayerObj(game, targetPlayer);
-    outObj[player.faction] = outObj[player.faction] + 1;
-  });
+const countFactions = (remappedData) => {
+  //const outObj = { Cortex: 0, Armada: 0, Legion: 0, CortexWin: 0, ArmadaWin: 0, LegionWin: 0 };
+
+  const outObj = remappedData.reduce(
+    (accum, current) => {
+      if (current.faction === "Cortex") {
+        accum.Cortex += 1;
+        if (current.didWin) accum.CortexWin += 1;
+      } else if (current.faction === "Armada") {
+        accum.Armada += 1;
+        if (current.didWin) accum.ArmadaWin += 1;
+      } else if (current.faction === "Legion") {
+        accum.Legion += 1;
+        if (current.didWin) accum.LegionWin += 1;
+      } else if (current.faction === "Unknown") {
+        accum.Unknown += 1;
+        if (current.didWin) accum.UnknownWin += 1;
+      }
+      return accum;
+    },
+    {
+      Cortex: 0,
+      Armada: 0,
+      Legion: 0,
+      CortexWin: 0,
+      ArmadaWin: 0,
+      LegionWin: 0,
+      Unknown: 0,
+      UnknownWins: 0,
+    }
+  );
+
   return outObj;
 };
 
@@ -91,6 +119,34 @@ const findTargetPlayerObj = (gameData, targetPlayer) => {
     if (player != null) return player;
   }
 };
+// returns a data row
+const processReplay = (gameData, targetPlayer) => {
+  // initialize output
+  const outObj = { replayId: gameData.id, startTime: gameData.startTime, durationMs: gameData.durationMs };
+
+  // find player / did team win
+  for (const team of gameData.AllyTeams) {
+    const player = team.Players.find((p) => p.name == targetPlayer);
+    if (player != null) {
+      outObj.playerId = player.playerId;
+      outObj.didWin = team.winningTeam;
+      outObj.startPos = player.startPos;
+      outObj.faction = player.faction;
+      break;
+    }
+  }
+
+  // find awards
+  outObj.econDestroyedAward = gameData.awards.econDestroyed[0].teamId == outObj.playerId;
+  outObj.unitsDestroyedAward = gameData.awards.fightingUnitsDestroyed[0].teamId == outObj.playerId;
+  outObj.resourceEfficiencyAward = gameData.awards.resourceEfficiency[0].teamId == outObj.playerId;
+  outObj.cow = gameData.awards.cow.teamId == outObj.playerId;
+
+  // find map
+  outObj.mapId = gameData.Map.id;
+  outObj.mapName = gameData.Map.scriptName;
+  return outObj;
+};
 
 /*
 const addTargetPlayerIds = (replayData, targetPlayer) => {
@@ -100,3 +156,22 @@ const addTargetPlayerIds = (replayData, targetPlayer) => {
   });
 };
 */
+
+// dataobj needs
+// didWin
+// replayId
+// faction
+// startpos
+// map
+// duration
+// startTime
+// econDestroyed award (t/f)
+// fightingUnitsDestroyed award (t/f)
+// resourceEfficiency award (t/f)
+// cow (t/f)
+// mostResourcesProduced (t/f)
+// mostDamageTaken (t/f)
+// longest sleep
+// spectactor count
+// allied player names []
+// enemy player names []
