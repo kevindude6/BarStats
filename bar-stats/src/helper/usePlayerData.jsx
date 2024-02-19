@@ -29,6 +29,7 @@ export const usePlayerData = (targetPlayerId) => {
       const processedData = {};
       processedData.winStats = findWinLoss(receivedData, playerId);
       processedData.factionStats = countFactions(processedReplays);
+      processedData.mapStats = countMaps(processedReplays);
 
       processedData.hasData = true;
       processedData.isLoading = false;
@@ -103,6 +104,25 @@ const countFactions = (remappedData) => {
     }
   );
 
+  return outObj;
+};
+
+const cleanMapName = (mapName) => {
+  const index = mapName.lastIndexOf(" ");
+  if (index === -1) return mapName;
+  else return mapName.slice(0, index);
+};
+
+const countMaps = (remappedData) => {
+  const outObj = remappedData.reduce((out, replay) => {
+    const cleanName = cleanMapName(replay.mapName);
+    if (!(cleanName in out)) {
+      out[cleanName] = { count: 0, wins: 0 };
+    }
+    out[cleanName].count += 1;
+    out[cleanName].wins += replay.didWin ? 1 : 0;
+    return out;
+  }, {});
   return outObj;
 };
 
