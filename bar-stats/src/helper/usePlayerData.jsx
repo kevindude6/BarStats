@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { findWinLoss } from "../ExtractStats";
 import { mockDataForPlayer } from "../mockData.js";
 import { GetReplay } from "../ApiEndpoints";
+import { extent, mode, sum, mean, median, quantile, variance, deviation } from "d3-array";
 
 const BATCHSIZE = 5;
 
@@ -117,12 +118,32 @@ const countMaps = (remappedData) => {
   const outObj = remappedData.reduce((out, replay) => {
     const cleanName = cleanMapName(replay.mapName);
     if (!(cleanName in out)) {
-      out[cleanName] = { count: 0, wins: 0 };
+      out[cleanName] = { cleanName: cleanName, count: 0, wins: 0, startTimes: [], durations: [] };
     }
     out[cleanName].count += 1;
     out[cleanName].wins += replay.didWin ? 1 : 0;
+    out[cleanName].startTimes.push(replay.startTime);
+    out[cleanName].durations.push(replay.durationMs);
     return out;
   }, {});
+
+  for (const mapName in outObj) {
+    outObj[mapName].startTimes.sort((a, b) => {
+      return new Date(b) - new Date(a);
+    });
+  }
+
+  for (const mapName in outObj) {
+    const mapObj = outObj[mapName];
+    mapObj.durationStats = {};
+    mapObj.durationStats.mean = mean(mapObj.durations);
+    mapObj.durationStats.median = median(mapObj.durations);
+    mapObj.durationStats.variance = variance(mapObj.durations);
+    mapObj.durationStats.deviation = deviation(mapObj.durations);
+    mapObj.durationStats.lowerQuartile = quantile(mapObj.durations, 0.25);
+    mapObj.durationStats.upperQuartile = quantile(mapObj.durations, 0.75);
+  }
+
   return outObj;
 };
 

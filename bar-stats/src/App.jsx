@@ -9,6 +9,7 @@ import { WinLossStats } from "./components/WinLossStats.jsx";
 import { FactionStats } from "./components/FactionStats.jsx";
 import { usePlayerData } from "./helper/usePlayerData.jsx";
 import { FactionGamesChart } from "./components/FactionGamesChart.jsx";
+import { MapStatsOverview } from "./components/MapStatsOverview.jsx";
 
 function App() {
   const [targetPlayer, setTargetPlayer] = useState("");
@@ -41,6 +42,9 @@ function App() {
             </div>
             <div className="col-span-6 h-56">
               <FactionGamesChart data={processedData} />
+            </div>
+            <div className="col-span-12">
+              <MapStatsOverview data={processedData} />
             </div>
           </>
         )}
