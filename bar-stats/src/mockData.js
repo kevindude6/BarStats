@@ -1,39 +1,1352 @@
 export const mockDataForPlayer = {
   totalResults: -1,
   page: 1,
-  limit: 30,
+  limit: 40,
   data: [
     {
-      id: "e35ccb65f480f15ff1f2e6ad0694612d",
-      startTime: "2024-02-13T12:13:23.000Z",
-      durationMs: 2582500,
-      Map: { fileName: "all_that_glitters_v2.1", scriptName: "All That Glitters v2.1" },
+      id: "1441d3650a418e63393b1ce7d9204c02",
+      startTime: "2024-02-19T11:52:52.000Z",
+      durationMs: 2054000,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
       AllyTeams: [
         {
           winningTeam: true,
           Players: [
-            { name: "Jackzo" },
-            { name: "Erlias" },
-            { name: "CheshireRrr" },
-            { name: "Nexode" },
-            { name: "Dawn005" },
-            { name: "Taras0791" },
-            { name: "[knb]monkerl" },
-            { name: "BigTastyKevin" },
+            {
+              name: "X1x2",
+            },
+            {
+              name: "Vixi666",
+            },
+            {
+              name: "vorple",
+            },
+            {
+              name: "LINGPHA",
+            },
+            {
+              name: "DJANGO",
+            },
+            {
+              name: "thatpandaburswag",
+            },
+            {
+              name: "nenoc",
+            },
+            {
+              name: "IBBACK",
+            },
           ],
           AIs: [],
         },
         {
           winningTeam: false,
           Players: [
-            { name: "General_Augustus" },
-            { name: "daPMK" },
-            { name: "Zaidchamp" },
-            { name: "Tesh" },
-            { name: "pl005" },
-            { name: "worstorphan" },
-            { name: "__Bear__" },
-            { name: "Kaioshin" },
+            {
+              name: "POOPsock",
+            },
+            {
+              name: "eggsys",
+            },
+            {
+              name: "summerxr",
+            },
+            {
+              name: "Valchrist",
+            },
+            {
+              name: "horobi",
+            },
+            {
+              name: "beutel81",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "Elmsdor",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "c8cbd2658f03a4dead847c571c1306cd",
+      startTime: "2024-02-19T03:32:24.000Z",
+      durationMs: 1340033,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "Fruit",
+            },
+            {
+              name: "newcat",
+            },
+            {
+              name: "NuclearStudent",
+            },
+            {
+              name: "pillow",
+            },
+            {
+              name: "Salvare",
+            },
+            {
+              name: "Kcorp",
+            },
+            {
+              name: "Chronopolize",
+            },
+            {
+              name: "__Bear__",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "DeviousNull",
+            },
+            {
+              name: "beardedcoder",
+            },
+            {
+              name: "RitualMurder",
+            },
+            {
+              name: "choom",
+            },
+            {
+              name: "SpookieDookie",
+            },
+            {
+              name: "XTA_ApeX",
+            },
+            {
+              name: "markivs",
+            },
+            {
+              name: "Xordan",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "e7c6d2656d62fe1c89d3450c5b9b8502",
+      startTime: "2024-02-19T03:11:35.000Z",
+      durationMs: 907700,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "XTA_ApeX",
+            },
+            {
+              name: "Desker",
+            },
+            {
+              name: "Ironhead",
+            },
+            {
+              name: "Salvare",
+            },
+            {
+              name: "LightningHornet",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "Chronopolize",
+            },
+            {
+              name: "RitualMurder",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "choom",
+            },
+            {
+              name: "Kcorp",
+            },
+            {
+              name: "Xordan",
+            },
+            {
+              name: "Cylix",
+            },
+            {
+              name: "SpookieDookie",
+            },
+            {
+              name: "beardedcoder",
+            },
+            {
+              name: "markivs",
+            },
+            {
+              name: "NuclearStudent",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "a6e3d165ce0147dc308b9a3d02acd642",
+      startTime: "2024-02-18T11:01:58.000Z",
+      durationMs: 6236666,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "Raigeki",
+            },
+            {
+              name: "highdefw",
+            },
+            {
+              name: "Indignus",
+            },
+            {
+              name: "[FSK21]Modius",
+            },
+            {
+              name: "GlassBeserker",
+            },
+            {
+              name: "FreshFelix95",
+            },
+            {
+              name: "MaxMustard",
+            },
+            {
+              name: "Slay",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "summerxr",
+            },
+            {
+              name: "DragoKen",
+            },
+            {
+              name: "BH82926",
+            },
+            {
+              name: "eggsys",
+            },
+            {
+              name: "pl005",
+            },
+            {
+              name: "DavideBlade",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "gh0stiegaming",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "ffaed065fd4b906d1943bec50001256d",
+      startTime: "2024-02-17T13:05:03.000Z",
+      durationMs: 2416467,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "ME_AIR",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "Pur",
+            },
+            {
+              name: "Fatpanda",
+            },
+            {
+              name: "EyeEatCheeks",
+            },
+            {
+              name: "Melkiyon",
+            },
+            {
+              name: "Lesny",
+            },
+            {
+              name: "KreepLord",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "Slixgar",
+            },
+            {
+              name: "Ahun",
+            },
+            {
+              name: "wendyle",
+            },
+            {
+              name: "NinjaSloth",
+            },
+            {
+              name: "[WNTR]_Fenris_SC2",
+            },
+            {
+              name: "Mauimiau",
+            },
+            {
+              name: "Lord_James",
+            },
+            {
+              name: "w0zb0t",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "71a5d065db29434a9134eb23bb114c10",
+      startTime: "2024-02-17T12:24:17.000Z",
+      durationMs: 1320800,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "ABADDONEONE",
+            },
+            {
+              name: "X1x2",
+            },
+            {
+              name: "Stijntju01",
+            },
+            {
+              name: "FuBAR",
+            },
+            {
+              name: "NinjaLooter",
+            },
+            {
+              name: "Tyloga",
+            },
+            {
+              name: "[BAB]KBOTRON",
+            },
+            {
+              name: "MattySinc",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "YoloSkiller",
+            },
+            {
+              name: "BlackPearl",
+            },
+            {
+              name: "EightyHD_15",
+            },
+            {
+              name: "muzzrx",
+            },
+            {
+              name: "NoodleBAR",
+            },
+            {
+              name: "[Valr]Azraell",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "Nemm",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "ac2bd065c8904d0498a38358db384e45",
+      startTime: "2024-02-17T03:44:44.000Z",
+      durationMs: 1933500,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "markivs",
+            },
+            {
+              name: "urbanninja000",
+            },
+            {
+              name: "taigod",
+            },
+            {
+              name: "Evil_Kodiak",
+            },
+            {
+              name: "bansoma",
+            },
+            {
+              name: "Salvare",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "Hbullet",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "Cylix",
+            },
+            {
+              name: "nct420",
+            },
+            {
+              name: "UncleBadTouch",
+            },
+            {
+              name: "Pomni",
+            },
+            {
+              name: "SadHarambe",
+            },
+            {
+              name: "beardedcoder",
+            },
+            {
+              name: "Fruit",
+            },
+            {
+              name: "[dump]StormBilly",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "b218d0656f27aeda4e33d2a919a248b5",
+      startTime: "2024-02-17T02:23:46.000Z",
+      durationMs: 2719767,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "Evil_Kodiak",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "Soulstream",
+            },
+            {
+              name: "Stoertebeker",
+            },
+            {
+              name: "Parsy",
+            },
+            {
+              name: "OhMeOhMy",
+            },
+            {
+              name: "urbanninja000",
+            },
+            {
+              name: "Mango",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "[PL]Simitar",
+            },
+            {
+              name: "Mar_Blazer",
+            },
+            {
+              name: "Kikkooo",
+            },
+            {
+              name: "Sun_Fire",
+            },
+            {
+              name: "thatpandaburswag",
+            },
+            {
+              name: "UncleBadTouch",
+            },
+            {
+              name: "Furina",
+            },
+            {
+              name: "Crazy2Net",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "9c5ecf65197cf917c0fdf15b9190e9d4",
+      startTime: "2024-02-16T13:09:48.000Z",
+      durationMs: 1444200,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "NukeOfficial",
+            },
+            {
+              name: "[OG]ShoX",
+            },
+            {
+              name: "BiliBlo",
+            },
+            {
+              name: "GTM",
+            },
+            {
+              name: "Dawn005",
+            },
+            {
+              name: "quetx",
+            },
+            {
+              name: "SpookieDookie",
+            },
+            {
+              name: "Moriji",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "NewPlayer1",
+            },
+            {
+              name: "Deevz",
+            },
+            {
+              name: "demondave",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "isbedabrick",
+            },
+            {
+              name: "Sophie",
+            },
+            {
+              name: "Hurricane_",
+            },
+            {
+              name: "pazzzzn",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "4a5acf6596420bdafaf2a17b4aa67903",
+      startTime: "2024-02-16T12:51:22.000Z",
+      durationMs: 865733,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "CavinTech",
+            },
+            {
+              name: "demondave",
+            },
+            {
+              name: "Deevz",
+            },
+            {
+              name: "SpookieDookie",
+            },
+            {
+              name: "Sophie",
+            },
+            {
+              name: "Grabarzz",
+            },
+            {
+              name: "Moriji",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "pazzzzn",
+            },
+            {
+              name: "isbedabrick",
+            },
+            {
+              name: "NukeOfficial",
+            },
+            {
+              name: "Dawn005",
+            },
+            {
+              name: "MATTDL03",
+            },
+            {
+              name: "X1x2",
+            },
+            {
+              name: "Hurricane_",
+            },
+            {
+              name: "BiliBlo",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "ea50cf65a12cc2c01ca0a20a4f765848",
+      startTime: "2024-02-16T12:11:22.000Z",
+      durationMs: 2149800,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "SpookieDookie",
+            },
+            {
+              name: "Hurricane_",
+            },
+            {
+              name: "MATTDL03",
+            },
+            {
+              name: "garbager",
+            },
+            {
+              name: "EnThrick",
+            },
+            {
+              name: "IAmAMerlin",
+            },
+            {
+              name: "ElderLeaf",
+            },
+            {
+              name: "AquilaJT",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "CavinTech",
+            },
+            {
+              name: "ShadowNinja13",
+            },
+            {
+              name: "juanc1t0",
+            },
+            {
+              name: "quetx",
+            },
+            {
+              name: "pazzzzn",
+            },
+            {
+              name: "Spirit131",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "Dawn005",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "3d1ecf659743f26ca379b5cf590b447a",
+      startTime: "2024-02-16T08:35:09.000Z",
+      durationMs: 1115800,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "Dormashbinks",
+            },
+            {
+              name: "itsmeyeti",
+            },
+            {
+              name: "NuclearStudent",
+            },
+            {
+              name: "GTM",
+            },
+            {
+              name: "Zap_",
+            },
+            {
+              name: "Chronopolize",
+            },
+            {
+              name: "XTA_ApeX",
+            },
+            {
+              name: "Kcorp",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "Kidro",
+            },
+            {
+              name: "[FLIP]Zow",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "Commander",
+            },
+            {
+              name: "wuy3",
+            },
+            {
+              name: "Justa5",
+            },
+            {
+              name: "[OG]ShoX",
+            },
+            {
+              name: "deckcommander",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "a8d7ce6560ea7dcd70c34aa923e06673",
+      startTime: "2024-02-16T03:34:00.000Z",
+      durationMs: 2228900,
+      Map: {
+        fileName: "all_that_glitters_v2.1",
+        scriptName: "All That Glitters v2.1",
+      },
+      AllyTeams: [
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "PenumbraEZ",
+            },
+            {
+              name: "Crazy2Net",
+            },
+            {
+              name: "Narwhal",
+            },
+            {
+              name: "urbanninja000",
+            },
+            {
+              name: "frixz",
+            },
+            {
+              name: "Zeke",
+            },
+            {
+              name: "Omaha",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "Don_Tony",
+            },
+            {
+              name: "Mist_e_Fire",
+            },
+            {
+              name: "wirenut",
+            },
+            {
+              name: "xternalqueue",
+            },
+            {
+              name: "akipi",
+            },
+            {
+              name: "[APE]Skank",
+            },
+            {
+              name: "chadslayer1331",
+            },
+            {
+              name: "WalnutSack",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "39f6cd65a533b7aed9267d27a7472b33",
+      startTime: "2024-02-15T11:32:09.000Z",
+      durationMs: 2534333,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "[AFF]InDaCluB",
+            },
+            {
+              name: "newcat",
+            },
+            {
+              name: "SpookieDookie",
+            },
+            {
+              name: "AIEasy",
+            },
+            {
+              name: "Unrelenting",
+            },
+            {
+              name: "Doxxed",
+            },
+            {
+              name: "Kcorp",
+            },
+            {
+              name: "MrElusive",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "DragoKen",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "BattleMoose",
+            },
+            {
+              name: "itsmeyeti",
+            },
+            {
+              name: "NICEtea",
+            },
+            {
+              name: "[eSkilL]Andre",
+            },
+            {
+              name: "Justa5",
+            },
+            {
+              name: "BiteMyAssets",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "becfcd65a521404864934f9812f50ff5",
+      startTime: "2024-02-15T08:47:58.000Z",
+      durationMs: 645567,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "[AFF]InDaCluB",
+            },
+            {
+              name: "Townhall",
+            },
+            {
+              name: "Alpha_Lucia",
+            },
+            {
+              name: "Xordan",
+            },
+            {
+              name: "[exp]map",
+            },
+            {
+              name: "Justa5",
+            },
+            {
+              name: "fiddler112",
+            },
+            {
+              name: "TrollHardGoPro",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "RitualMurder",
+            },
+            {
+              name: "Dormashbinks",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "Vilageidot",
+            },
+            {
+              name: "itsmeyeti",
+            },
+            {
+              name: "KaiserGlass",
+            },
+            {
+              name: "[OG]ShoX",
+            },
+            {
+              name: "GTM",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "1ebacc6527ebadc55e981fefcea7d6a0",
+      startTime: "2024-02-14T13:03:26.000Z",
+      durationMs: 1347233,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "[AFF]InDaCluB",
+            },
+            {
+              name: "Alpha_Lucia",
+            },
+            {
+              name: "SpookieDookie",
+            },
+            {
+              name: "MrElusive",
+            },
+            {
+              name: "Zap_",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "Happiness",
+            },
+            {
+              name: "X1x2",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "Wind",
+            },
+            {
+              name: "Hurricane_",
+            },
+            {
+              name: "Furina",
+            },
+            {
+              name: "AIEasy",
+            },
+            {
+              name: "NICEtea",
+            },
+            {
+              name: "klaboem",
+            },
+            {
+              name: "Justa5",
+            },
+            {
+              name: "slupka",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "9d7fcc6518fbef412dafd01e314735df",
+      startTime: "2024-02-14T08:53:49.000Z",
+      durationMs: 853633,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "[AFF]InDaCluB",
+            },
+            {
+              name: "XViper",
+            },
+            {
+              name: "Panamajacks",
+            },
+            {
+              name: "Anoromi",
+            },
+            {
+              name: "itsmeyeti",
+            },
+            {
+              name: "Kcorp",
+            },
+            {
+              name: "XTA_ApeX",
+            },
+            {
+              name: "__Bear__",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "RG22",
+            },
+            {
+              name: "Juzza",
+            },
+            {
+              name: "Hurricane_",
+            },
+            {
+              name: "malehkit",
+            },
+            {
+              name: "augi010",
+            },
+            {
+              name: "Justa5",
+            },
+            {
+              name: "KaiserGlass",
+            },
+            {
+              name: "mr2mark",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "f732cc654ebf6957ceea0eb718b05abf",
+      startTime: "2024-02-14T03:26:47.000Z",
+      durationMs: 2106267,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "DeansBeans",
+            },
+            {
+              name: "Agonist",
+            },
+            {
+              name: "KingGiraffe601",
+            },
+            {
+              name: "Archi",
+            },
+            {
+              name: "dreammariner",
+            },
+            {
+              name: "Cheeseman2015",
+            },
+            {
+              name: "Necromancer",
+            },
+            {
+              name: "Proculus",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "SMOOTH",
+            },
+            {
+              name: "[Spuds]StRiFe",
+            },
+            {
+              name: "OAT721",
+            },
+            {
+              name: "Dasvoid",
+            },
+            {
+              name: "PoisonedMango",
+            },
+            {
+              name: "10BANDS50BANDS",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "urbanninja000",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "e35ccb65f480f15ff1f2e6ad0694612d",
+      startTime: "2024-02-13T12:13:23.000Z",
+      durationMs: 2582500,
+      Map: {
+        fileName: "all_that_glitters_v2.1",
+        scriptName: "All That Glitters v2.1",
+      },
+      AllyTeams: [
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "Jackzo",
+            },
+            {
+              name: "Erlias",
+            },
+            {
+              name: "CheshireRrr",
+            },
+            {
+              name: "Nexode",
+            },
+            {
+              name: "Dawn005",
+            },
+            {
+              name: "Taras0791",
+            },
+            {
+              name: "[knb]monkerl",
+            },
+            {
+              name: "BigTastyKevin",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "General_Augustus",
+            },
+            {
+              name: "daPMK",
+            },
+            {
+              name: "Zaidchamp",
+            },
+            {
+              name: "Tesh",
+            },
+            {
+              name: "pl005",
+            },
+            {
+              name: "worstorphan",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "Kaioshin",
+            },
           ],
           AIs: [],
         },
@@ -43,16 +1356,45 @@ export const mockDataForPlayer = {
       id: "6fe2ca65105865db48a6a8ba64f9d60f",
       startTime: "2024-02-13T03:30:55.000Z",
       durationMs: 1297300,
-      Map: { fileName: "altored_divide_bar_remake_1.6.2", scriptName: "Altored Divide Bar Remake 1.6.2" },
+      Map: {
+        fileName: "altored_divide_bar_remake_1.6.2",
+        scriptName: "Altored Divide Bar Remake 1.6.2",
+      },
       AllyTeams: [
         {
           winningTeam: true,
-          Players: [{ name: "Traffic" }, { name: "Xandarius" }, { name: "Irishstud14" }, { name: "Valkyrie" }],
+          Players: [
+            {
+              name: "Traffic",
+            },
+            {
+              name: "Xandarius",
+            },
+            {
+              name: "Irishstud14",
+            },
+            {
+              name: "Valkyrie",
+            },
+          ],
           AIs: [],
         },
         {
           winningTeam: false,
-          Players: [{ name: "urbanninja000" }, { name: "PoisonedMango" }, { name: "Narwhal" }, { name: "__Bear__" }],
+          Players: [
+            {
+              name: "urbanninja000",
+            },
+            {
+              name: "PoisonedMango",
+            },
+            {
+              name: "Narwhal",
+            },
+            {
+              name: "__Bear__",
+            },
+          ],
           AIs: [],
         },
       ],
@@ -61,16 +1403,45 @@ export const mockDataForPlayer = {
       id: "39deca65d301b8797fd50c7d42eb81c5",
       startTime: "2024-02-13T03:12:57.000Z",
       durationMs: 862700,
-      Map: { fileName: "charlie_in_the_hills_remake_v1.1", scriptName: "Charlie In The Hills Remake v1.1" },
+      Map: {
+        fileName: "charlie_in_the_hills_remake_v1.1",
+        scriptName: "Charlie In The Hills Remake v1.1",
+      },
       AllyTeams: [
         {
           winningTeam: true,
-          Players: [{ name: "Traffic" }, { name: "Xandarius" }, { name: "Irishstud14" }, { name: "Valkyrie" }],
+          Players: [
+            {
+              name: "Traffic",
+            },
+            {
+              name: "Xandarius",
+            },
+            {
+              name: "Irishstud14",
+            },
+            {
+              name: "Valkyrie",
+            },
+          ],
           AIs: [],
         },
         {
           winningTeam: false,
-          Players: [{ name: "urbanninja000" }, { name: "PoisonedMango" }, { name: "Narwhal" }, { name: "__Bear__" }],
+          Players: [
+            {
+              name: "urbanninja000",
+            },
+            {
+              name: "PoisonedMango",
+            },
+            {
+              name: "Narwhal",
+            },
+            {
+              name: "__Bear__",
+            },
+          ],
           AIs: [],
         },
       ],
@@ -79,33 +1450,68 @@ export const mockDataForPlayer = {
       id: "6517ca65fc6bbdb074c37c7cda07e6de",
       startTime: "2024-02-12T13:04:37.000Z",
       durationMs: 1660733,
-      Map: { fileName: "supreme_isthmus_v1.6.3", scriptName: "Supreme Isthmus v1.6.3" },
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
       AllyTeams: [
         {
           winningTeam: true,
           Players: [
-            { name: "chossuh" },
-            { name: "Yenvon" },
-            { name: "Koagant" },
-            { name: "X1x2" },
-            { name: "ISI_GamerZ" },
-            { name: "Turel" },
-            { name: "Bonte" },
-            { name: "Townhall" },
+            {
+              name: "chossuh",
+            },
+            {
+              name: "Yenvon",
+            },
+            {
+              name: "Koagant",
+            },
+            {
+              name: "X1x2",
+            },
+            {
+              name: "ISI_GamerZ",
+            },
+            {
+              name: "Turel",
+            },
+            {
+              name: "Bonte",
+            },
+            {
+              name: "Townhall",
+            },
           ],
           AIs: [],
         },
         {
           winningTeam: false,
           Players: [
-            { name: "OceanSong" },
-            { name: "TEAAAAA" },
-            { name: "saturn23" },
-            { name: "isbedabrick" },
-            { name: "BiteMyAssets" },
-            { name: "Andavarus" },
-            { name: "__Bear__" },
-            { name: "[CTMS]Slashomega" },
+            {
+              name: "OceanSong",
+            },
+            {
+              name: "TEAAAAA",
+            },
+            {
+              name: "saturn23",
+            },
+            {
+              name: "isbedabrick",
+            },
+            {
+              name: "BiteMyAssets",
+            },
+            {
+              name: "Andavarus",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "[CTMS]Slashomega",
+            },
           ],
           AIs: [],
         },
@@ -115,33 +1521,68 @@ export const mockDataForPlayer = {
       id: "7311ca65663b08f30796988759bfb104",
       startTime: "2024-02-12T12:39:15.000Z",
       durationMs: 1210500,
-      Map: { fileName: "supreme_isthmus_v1.6.3", scriptName: "Supreme Isthmus v1.6.3" },
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
       AllyTeams: [
         {
           winningTeam: false,
           Players: [
-            { name: "Andavarus" },
-            { name: "isbedabrick" },
-            { name: "ISI_GamerZ" },
-            { name: "chossuh" },
-            { name: "saturn23" },
-            { name: "Omaha" },
-            { name: "OceanSong" },
-            { name: "Antraxis" },
+            {
+              name: "Andavarus",
+            },
+            {
+              name: "isbedabrick",
+            },
+            {
+              name: "ISI_GamerZ",
+            },
+            {
+              name: "chossuh",
+            },
+            {
+              name: "saturn23",
+            },
+            {
+              name: "Omaha",
+            },
+            {
+              name: "OceanSong",
+            },
+            {
+              name: "Antraxis",
+            },
           ],
           AIs: [],
         },
         {
           winningTeam: true,
           Players: [
-            { name: "MakPerdak" },
-            { name: "EarthWalker" },
-            { name: "Zacharias" },
-            { name: "deckcommander" },
-            { name: "Anoromi" },
-            { name: "Smy" },
-            { name: "__Bear__" },
-            { name: "[CTMS]Slashomega" },
+            {
+              name: "MakPerdak",
+            },
+            {
+              name: "EarthWalker",
+            },
+            {
+              name: "Zacharias",
+            },
+            {
+              name: "deckcommander",
+            },
+            {
+              name: "Anoromi",
+            },
+            {
+              name: "Smy",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "[CTMS]Slashomega",
+            },
           ],
           AIs: [],
         },
@@ -151,33 +1592,68 @@ export const mockDataForPlayer = {
       id: "de09ca65455bc1bd0eb7c4043ec6bb51",
       startTime: "2024-02-12T12:06:54.000Z",
       durationMs: 1720867,
-      Map: { fileName: "supreme_isthmus_v1.6.3", scriptName: "Supreme Isthmus v1.6.3" },
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
       AllyTeams: [
         {
           winningTeam: true,
           Players: [
-            { name: "EldradhAFUS" },
-            { name: "isbedabrick" },
-            { name: "OceanSong" },
-            { name: "deckcommander" },
-            { name: "agoie" },
-            { name: "EarthWalker" },
-            { name: "ISI_GamerZ" },
-            { name: "Antraxis" },
+            {
+              name: "EldradhAFUS",
+            },
+            {
+              name: "isbedabrick",
+            },
+            {
+              name: "OceanSong",
+            },
+            {
+              name: "deckcommander",
+            },
+            {
+              name: "agoie",
+            },
+            {
+              name: "EarthWalker",
+            },
+            {
+              name: "ISI_GamerZ",
+            },
+            {
+              name: "Antraxis",
+            },
           ],
           AIs: [],
         },
         {
           winningTeam: false,
           Players: [
-            { name: "saturn23" },
-            { name: "[CTMS]Slashomega" },
-            { name: "Zacharias" },
-            { name: "Harmfulbrown25" },
-            { name: "Cropz" },
-            { name: "Omaha" },
-            { name: "__Bear__" },
-            { name: "zealo" },
+            {
+              name: "saturn23",
+            },
+            {
+              name: "[CTMS]Slashomega",
+            },
+            {
+              name: "Zacharias",
+            },
+            {
+              name: "Harmfulbrown25",
+            },
+            {
+              name: "Cropz",
+            },
+            {
+              name: "Omaha",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "zealo",
+            },
           ],
           AIs: [],
         },
@@ -187,33 +1663,68 @@ export const mockDataForPlayer = {
       id: "b197c9654a5905d17cc14c8e31ace06a",
       startTime: "2024-02-12T03:59:45.000Z",
       durationMs: 2938367,
-      Map: { fileName: "forge_v2.3", scriptName: "Forge v2.3" },
+      Map: {
+        fileName: "forge_v2.3",
+        scriptName: "Forge v2.3",
+      },
       AllyTeams: [
         {
           winningTeam: true,
           Players: [
-            { name: "khakis" },
-            { name: "Rimmer" },
-            { name: "LadyBird" },
-            { name: "AkiraSorara" },
-            { name: "Goku_Uchiha_SS3" },
-            { name: "ILikeAsians" },
-            { name: "mcscrag" },
-            { name: "Jinx128" },
+            {
+              name: "khakis",
+            },
+            {
+              name: "Rimmer",
+            },
+            {
+              name: "LadyBird",
+            },
+            {
+              name: "AkiraSorara",
+            },
+            {
+              name: "Goku_Uchiha_SS3",
+            },
+            {
+              name: "ILikeAsians",
+            },
+            {
+              name: "mcscrag",
+            },
+            {
+              name: "Jinx128",
+            },
           ],
           AIs: [],
         },
         {
           winningTeam: false,
           Players: [
-            { name: "GMALLOY33" },
-            { name: "Lancks" },
-            { name: "PoisonedMango" },
-            { name: "OnlyTicks" },
-            { name: "Jamphone" },
-            { name: "__Bear__" },
-            { name: "Destro" },
-            { name: "Dancingdingleberry" },
+            {
+              name: "GMALLOY33",
+            },
+            {
+              name: "Lancks",
+            },
+            {
+              name: "PoisonedMango",
+            },
+            {
+              name: "OnlyTicks",
+            },
+            {
+              name: "Jamphone",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "Destro",
+            },
+            {
+              name: "Dancingdingleberry",
+            },
           ],
           AIs: [],
         },
@@ -223,33 +1734,68 @@ export const mockDataForPlayer = {
       id: "af8bc96549079f1838e46b6fbb11ca07",
       startTime: "2024-02-12T03:08:31.000Z",
       durationMs: 1920400,
-      Map: { fileName: "rosetta_1.42", scriptName: "Rosetta 1.42" },
+      Map: {
+        fileName: "rosetta_1.42",
+        scriptName: "Rosetta 1.42",
+      },
       AllyTeams: [
         {
           winningTeam: false,
           Players: [
-            { name: "UncleBadTouch" },
-            { name: "__Bear__" },
-            { name: "Kromok" },
-            { name: "Choupe" },
-            { name: "urbanninja000" },
-            { name: "[MASK]Soli" },
-            { name: "ToninsTon" },
-            { name: "PoisonedMango" },
+            {
+              name: "UncleBadTouch",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "Kromok",
+            },
+            {
+              name: "Choupe",
+            },
+            {
+              name: "urbanninja000",
+            },
+            {
+              name: "[MASK]Soli",
+            },
+            {
+              name: "ToninsTon",
+            },
+            {
+              name: "PoisonedMango",
+            },
           ],
           AIs: [],
         },
         {
           winningTeam: true,
           Players: [
-            { name: "ElenaNito" },
-            { name: "slim[]daddy" },
-            { name: "SLOPPYGAGGER" },
-            { name: "huser" },
-            { name: "]OS_1_CLAN[ado" },
-            { name: "Wiira" },
-            { name: "kennyei" },
-            { name: "Vrekrer" },
+            {
+              name: "ElenaNito",
+            },
+            {
+              name: "slim[]daddy",
+            },
+            {
+              name: "SLOPPYGAGGER",
+            },
+            {
+              name: "huser",
+            },
+            {
+              name: "]OS_1_CLAN[ado",
+            },
+            {
+              name: "Wiira",
+            },
+            {
+              name: "kennyei",
+            },
+            {
+              name: "Vrekrer",
+            },
           ],
           AIs: [],
         },
@@ -259,743 +1805,935 @@ export const mockDataForPlayer = {
       id: "7681c9658cd7ecd6037857c0b76f6699",
       startTime: "2024-02-12T02:24:54.000Z",
       durationMs: 2086633,
-      Map: { fileName: "supreme_isthmus_v1.6.3", scriptName: "Supreme Isthmus v1.6.3" },
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
       AllyTeams: [
         {
           winningTeam: true,
           Players: [
-            { name: "Kcorp" },
-            { name: "Vziuh" },
-            { name: "LostHope" },
-            { name: "TaxationIsTheft" },
-            { name: "EthanTheEpic" },
-            { name: "GreekoBratko" },
-            { name: "Xordan" },
-            { name: "Vilageidot" },
+            {
+              name: "Kcorp",
+            },
+            {
+              name: "Vziuh",
+            },
+            {
+              name: "LostHope",
+            },
+            {
+              name: "TaxationIsTheft",
+            },
+            {
+              name: "EthanTheEpic",
+            },
+            {
+              name: "GreekoBratko",
+            },
+            {
+              name: "Xordan",
+            },
+            {
+              name: "Vilageidot",
+            },
           ],
           AIs: [],
         },
         {
           winningTeam: false,
           Players: [
-            { name: "Viable" },
-            { name: "Frozt" },
-            { name: "keedo" },
-            { name: "bladerunner" },
-            { name: "Arrun247" },
-            { name: "__Bear__" },
-            { name: "XTA_ApeX" },
-            { name: "PoisonedMango" },
+            {
+              name: "Viable",
+            },
+            {
+              name: "Frozt",
+            },
+            {
+              name: "keedo",
+            },
+            {
+              name: "bladerunner",
+            },
+            {
+              name: "Arrun247",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "XTA_ApeX",
+            },
+            {
+              name: "PoisonedMango",
+            },
           ],
           AIs: [],
         },
       ],
     },
-  ],
-};
-export const mockDataForReplay = {
-  id: "e35ccb65f480f15ff1f2e6ad0694612d",
-  fileName: "2024-02-13_12-13-23-021_All That Glitters v2_105.1.1-2303-g5f26a29 BAR105.sdfz",
-  engineVersion: "105.1.1-2303-g5f26a29 BAR105",
-  gameVersion: "Beyond All Reason test-25240-3cdcf87",
-  startTime: "2024-02-13T12:13:23.000Z",
-  durationMs: 2582500,
-  fullDurationMs: 2806000,
-  hostSettings: {
-    ishost: "1",
-    hostip: "",
-    numallyteams: "2",
-    numteams: "16",
-    startpostype: "2",
-    gametype: "Beyond All Reason test-25240-3cdcf87",
-    hosttype: "SPADS",
-    mapname: "All That Glitters v2.1",
-    autohostport: "53101",
-    numrestrictions: "0",
-    autohostname: "[teh]clusterEU3[01]",
-    autohostrank: "0",
-    autohostaccountid: "45660",
-    numplayers: "21",
-    autohostcountrycode: "US",
-    hostport: "53201",
-  },
-  gameSettings: {
-    experimentalrebalancet2energy: "0",
-    transportenemy: "notcoms",
-    experimentalextraunits: "0",
-    maxunits: "2000",
-    tweakunits3: "",
-    multiplier_maxdamage: "1",
-    raptor_firstwavesboost: "1",
-    unit_restrictions_noair: "0",
-    metalperpoint: "1",
-    raptor_raptorstart: "initialbox",
-    assistdronescount: "10",
-    disablemapdamage: "0",
-    scav_spawntimemult: "1",
-    experimentalrebalancet2metalextractors: "0",
-    multiplier_metalcost: "1",
-    tweakunits: "",
-    experimentalreversegear: "0",
-    debugcommands: "",
-    allowpausegameplay: "1",
-    captureradius: "100",
-    multiplier_energyproduction: "1",
-    unit_restrictions_nonukes: "0",
-    scav_spawncountmult: "1",
-    decapspeed: "2",
-    multiplier_builddistance: "1",
-    multiplier_energycost: "1",
-    tweakdefs3: "",
-    assistdronesair: "1",
-    limitscore: "300",
-    unified_maxslope: "0",
-    startenergy: "1000",
-    scoremode_chess_unbalanced: "0",
-    tweakdefs2: "",
-    ruins_civilian_disable: "0",
-    startmetal: "1000",
-    teamffa_start_boxes_shuffle: "1",
-    usemexconfig: "0",
-    experimentalnoaircollisions: "0",
-    raptor_spawncountmult: "1",
-    usemapconfig: "1",
-    norush: "0",
-    lootboxes: "scav_only",
-    ffa_wreckage: "0",
-    raptor_queentimemult: "1",
-    tugofwarmodifier: "4",
-    multiplier_weaponrange: "1",
-    capturetime: "30",
-    multiplier_maxvelocity: "1",
-    scav_graceperiodmult: "1",
-    tweakunits9: "",
-    ruins_density: "normal",
-    assistdronesenabled: "disabled",
-    experimentalstandardgravity: "mapgravity",
-    tweakdefs7: "",
-    map_waterlevel: "0",
-    scav_difficulty: "normal",
-    unit_restrictions_notech3: "0",
-    unit_restrictions_notech2: "0",
-    scoremode_chess_adduptime: "1",
-    multiplier_shieldpower: "1",
-    tweakdefs5: "",
-    commanderbuildersenabled: "disabled",
-    tweakdefs: "",
-    unit_restrictions_noconverters: "0",
-    emprework: "0",
-    raptor_graceperiodmult: "1",
-    tweakdefs9: "",
-    dominationscoretime: "30",
-    tweakunits4: "",
-    experimentalxpgain: "1",
-    experimentalmassoverride: "0",
-    multiplier_buildpower: "1",
-    teamcolors_icon_dev_mode: "disabled",
-    scav_scavstart: "initialbox",
-    assistdronesbuildpowermultiplier: "1",
-    ruins: "scav_only",
-    ruins_only_t1: "1",
-    multiplier_buildtimecost: "1",
-    capturebonus: "100",
-    starttime: "0",
-    multiplier_resourceincome: "1",
-    scoremode_chess: "1",
-    tweakdefs8: "",
-    map_tidal: "unchanged",
-    unit_restrictions_nolrpc: "0",
-    dominationscore: "1000",
-    unit_restrictions_noextractors: "0",
-    multiplier_turnrate: "1",
-    tweakdefs1: "",
-    norushtimer: "5",
-    raptor_spawntimemult: "1",
-    tweakunits2: "",
-    tweakunits8: "",
-    lootboxes_density: "normal",
-    multiplier_energyconversion: "1",
-    allowuserwidgets: "1",
-    shareddynamicalliancevictory: "0",
-    energyperpoint: "75",
-    tweakunits5: "",
-    unit_restrictions_notacnukes: "0",
-    experimentallegionfaction: "0",
-    experimentalshields: "unchanged",
-    startenergystorage: "1000",
-    experimentalimprovedtransports: "0",
-    scoremode: "disabled",
-    experimentalrebalancewreckstandarization: "1",
-    numberofcontrolpoints: "13",
-    startmetalstorage: "1000",
-    map_atmosphere: "1",
-    lategame_rebalance: "0",
-    faction_limiter: "",
-    multiplier_metalextraction: "1",
-    tweakunits6: "",
-    multiplier_losrange: "1",
-    tweakdefs4: "",
-    scav_endless: "0",
-    disable_fogofwar: "0",
-    tweakunits1: "",
-    experimentalrebalancet2labs: "0",
-    ranked_game: "1",
-    fixedallies: "1",
-    coop: "0",
-    scoremode_chess_spawnsperphase: "1",
-    scav_bosstimemult: "1",
-    critters: "1",
-    tweakunits7: "",
-    commanderbuildersrange: "1000",
-    defaultdecals: "1",
-    multiplier_weapondamage: "1",
-    raptor_difficulty: "normal",
-    multiplier_radarrange: "1",
-    map_waterislava: "0",
-    commanderbuildersbuildpower: "400",
-    releasecandidates: "1",
-    raptor_endless: "0",
-    tweakdefs6: "",
-    teamcolors_anonymous_mode: "disabled",
-    ai_incomemultiplier: "1",
-    deathmode: "com",
-    air_rework: "0",
-  },
-  mapSettings: { dry: "0" },
-  spadsSettings: {
-    clanmode: "tag(5):pref(5)",
-    autobalance: "advanced",
-    colorsensitivity: "-1",
-    nbplayerbyid: "1",
-    rankmode: "account",
-    minplayers: "1",
-    botsrank: "3",
-    extrabox: "0",
-    forcestarted: "0",
-    maxspecs: "",
-    autostop: "gameOver",
-    nospecdraw: "0",
-    autoaddbotnb: "0",
-    springservertype: "dedicated",
-    autostart: "off",
-    speedcontrol: "2",
-    autofixcolors: "off",
-    autospecextraplayers: "1",
-    skillmode: "rank",
-    minteamsize: "1",
-    autoblockcolors: "0",
-    teamsize: "8",
-    idsharemode: "off",
-    autoblockbalance: "1",
-    nbteams: "2",
-    spadsversion: "0.13.26",
-    nospecchat: "0",
-    balancemode: "clan:skill",
-  },
-  gameEndedNormally: true,
-  hasBots: false,
-  preset: "team",
-  reported: false,
-  awards: {
-    econDestroyed: [
-      { teamId: 12, value: 2748025 },
-      { teamId: 10, value: 1197580 },
-      { teamId: 3, value: 80870 },
-    ],
-    fightingUnitsDestroyed: [
-      { teamId: 12, value: 18632062 },
-      { teamId: 1, value: 10606210 },
-      { teamId: 3, value: 9748000 },
-    ],
-    resourceEfficiency: [
-      { teamId: 12, value: 1.52886152 },
-      { teamId: 9, value: 0.36984247 },
-      { teamId: 0, value: 0.27423704 },
-    ],
-    cow: { teamId: 12 },
-    mostResourcesProduced: { teamId: 1, value: 67684736 },
-    mostDamageTaken: { teamId: 1, value: 950861.875 },
-    sleep: { teamId: 1, value: 1586.1333 },
-  },
-  createdAt: "2024-02-13T13:00:53.587Z",
-  updatedAt: "2024-02-13T13:00:53.587Z",
-  mapId: 337,
-  Map: { id: 337, scriptName: "All That Glitters v2.1", fileName: "all_that_glitters_v2.1", width: 12, height: 20 },
-  AllyTeams: [
     {
-      id: 1341973,
-      allyTeamId: 0,
-      startBox: { bottom: 1, left: 0, top: 0.8, right: 1 },
-      winningTeam: false,
-      createdAt: "2024-02-13T13:00:53.605Z",
-      updatedAt: "2024-02-13T13:00:53.605Z",
-      demoId: "e35ccb65f480f15ff1f2e6ad0694612d",
-      Players: [
+      id: "16b9c86593ed19b0c61b495b26e48e89",
+      startTime: "2024-02-11T12:09:58.000Z",
+      durationMs: 2704933,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
         {
-          id: 4501944,
-          playerId: 5,
-          name: "Kaioshin",
-          teamId: 5,
-          handicap: 0,
-          faction: "Cortex",
-          countryCode: "DE",
-          rgbColor: { b: 47, g: 112, r: 27 },
-          rank: 4,
-          skillUncertainty: 2.01,
-          skill: "[9.2]",
-          trueSkill: null,
-          startPos: { x: 5469, y: 178.50048828125, z: 9522 },
-          clanId: null,
-          trueSkillMuBefore: null,
-          trueSkillSigmaBefore: null,
-          trueSkillMuAfter: null,
-          trueSkillSigmaAfter: null,
-          createdAt: "2024-02-13T13:00:54.064Z",
-          updatedAt: "2024-02-13T13:00:54.068Z",
-          allyTeamId: 1341973,
-          userId: 48587,
+          winningTeam: true,
+          Players: [
+            {
+              name: "KaiserGlass",
+            },
+            {
+              name: "Leo88",
+            },
+            {
+              name: "jMiguel",
+            },
+            {
+              name: "Nazarid",
+            },
+            {
+              name: "WhiteSeraph",
+            },
+            {
+              name: "Xordan",
+            },
+            {
+              name: "Karolson",
+            },
+            {
+              name: "badbot",
+            },
+          ],
+          AIs: [],
         },
         {
-          id: 4501931,
-          playerId: 4,
-          name: "General_Augustus",
-          teamId: 4,
-          handicap: 0,
-          faction: "Cortex",
-          countryCode: "FR",
-          rgbColor: { b: 148, g: 255, r: 143 },
-          rank: 4,
-          skillUncertainty: 2.04,
-          skill: "[12.51]",
-          trueSkill: null,
-          startPos: { x: 5160, y: 178.494140625, z: 8200 },
-          clanId: null,
-          trueSkillMuBefore: null,
-          trueSkillSigmaBefore: null,
-          trueSkillMuAfter: null,
-          trueSkillSigmaAfter: null,
-          createdAt: "2024-02-13T13:00:53.710Z",
-          updatedAt: "2024-02-13T13:00:53.715Z",
-          allyTeamId: 1341973,
-          userId: 169469,
-        },
-        {
-          id: 4501932,
-          playerId: 2,
-          name: "daPMK",
-          teamId: 2,
-          handicap: 0,
-          faction: "Armada",
-          countryCode: "NO",
-          rgbColor: { b: 229, g: 245, r: 0 },
-          rank: 4,
-          skillUncertainty: 2.37,
-          skill: "[18.27]",
-          trueSkill: null,
-          startPos: { x: 655, y: 171.3951416015625, z: 8197 },
-          clanId: null,
-          trueSkillMuBefore: null,
-          trueSkillSigmaBefore: null,
-          trueSkillMuAfter: null,
-          trueSkillSigmaAfter: null,
-          createdAt: "2024-02-13T13:00:53.744Z",
-          updatedAt: "2024-02-13T13:00:53.754Z",
-          allyTeamId: 1341973,
-          userId: 56774,
-        },
-        {
-          id: 4501936,
-          playerId: 3,
-          name: "Zaidchamp",
-          teamId: 3,
-          handicap: 0,
-          faction: "Armada",
-          countryCode: "US",
-          rgbColor: { b: 242, g: 65, r: 105 },
-          rank: 4,
-          skillUncertainty: 2.8,
-          skill: "[16.07]",
-          trueSkill: null,
-          startPos: { x: 1955, y: 169.002197265625, z: 9634 },
-          clanId: null,
-          trueSkillMuBefore: null,
-          trueSkillSigmaBefore: null,
-          trueSkillMuAfter: null,
-          trueSkillSigmaAfter: null,
-          createdAt: "2024-02-13T13:00:53.863Z",
-          updatedAt: "2024-02-13T13:00:53.867Z",
-          allyTeamId: 1341973,
-          userId: 51944,
-        },
-        {
-          id: 4501938,
-          playerId: 6,
-          name: "Tesh",
-          teamId: 6,
-          handicap: 0,
-          faction: "Armada",
-          countryCode: "AU",
-          rgbColor: { b: 255, g: 194, r: 124 },
-          rank: 1,
-          skillUncertainty: 6.78,
-          skill: "[7.2]",
-          trueSkill: null,
-          startPos: { x: 3195, y: 178.2353515625, z: 8267 },
-          clanId: null,
-          trueSkillMuBefore: null,
-          trueSkillSigmaBefore: null,
-          trueSkillMuAfter: null,
-          trueSkillSigmaAfter: null,
-          createdAt: "2024-02-13T13:00:53.914Z",
-          updatedAt: "2024-02-13T13:00:53.917Z",
-          allyTeamId: 1341973,
-          userId: 203908,
-        },
-        {
-          id: 4501939,
-          playerId: 7,
-          name: "pl005",
-          teamId: 7,
-          handicap: 0,
-          faction: "Cortex",
-          countryCode: "RU",
-          rgbColor: { b: 255, g: 148, r: 162 },
-          rank: 3,
-          skillUncertainty: 5.21,
-          skill: "[6.71]",
-          trueSkill: null,
-          startPos: { x: 3480, y: 176.111328125, z: 9680 },
-          clanId: null,
-          trueSkillMuBefore: null,
-          trueSkillSigmaBefore: null,
-          trueSkillMuAfter: null,
-          trueSkillSigmaAfter: null,
-          createdAt: "2024-02-13T13:00:53.937Z",
-          updatedAt: "2024-02-13T13:00:53.941Z",
-          allyTeamId: 1341973,
-          userId: 186861,
-        },
-        {
-          id: 4501940,
-          playerId: 1,
-          name: "worstorphan",
-          teamId: 1,
-          handicap: 0,
-          faction: "Cortex",
-          countryCode: "US",
-          rgbColor: { b: 8, g: 233, r: 12 },
-          rank: 3,
-          skillUncertainty: 3.13,
-          skill: "[19.91]",
-          trueSkill: null,
-          startPos: { x: 317, y: 168.3702392578125, z: 9649 },
-          clanId: null,
-          trueSkillMuBefore: null,
-          trueSkillSigmaBefore: null,
-          trueSkillMuAfter: null,
-          trueSkillSigmaAfter: null,
-          createdAt: "2024-02-13T13:00:53.957Z",
-          updatedAt: "2024-02-13T13:00:53.961Z",
-          allyTeamId: 1341973,
-          userId: 5725,
-        },
-        {
-          id: 4501943,
-          playerId: 0,
-          name: "__Bear__",
-          teamId: 0,
-          handicap: 0,
-          faction: "Cortex",
-          countryCode: "JP",
-          rgbColor: { b: 243, g: 62, r: 11 },
-          rank: 4,
-          skillUncertainty: 1.64,
-          skill: "[33.51]",
-          trueSkill: null,
-          startPos: { x: 1830, y: 176.3203125, z: 8229 },
-          clanId: null,
-          trueSkillMuBefore: null,
-          trueSkillSigmaBefore: null,
-          trueSkillMuAfter: null,
-          trueSkillSigmaAfter: null,
-          createdAt: "2024-02-13T13:00:54.033Z",
-          updatedAt: "2024-02-13T13:00:54.038Z",
-          allyTeamId: 1341973,
-          userId: 108724,
+          winningTeam: false,
+          Players: [
+            {
+              name: "deckcommander",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "400KgBut52OS",
+            },
+            {
+              name: "LastShadow23",
+            },
+            {
+              name: "BakeMedo",
+            },
+            {
+              name: "Chronopolize",
+            },
+            {
+              name: "Justa5",
+            },
+            {
+              name: "marty_bird",
+            },
+          ],
+          AIs: [],
         },
       ],
-      AIs: [],
     },
     {
-      id: 1341972,
-      allyTeamId: 1,
-      startBox: { bottom: 0.2, left: 0, top: 0, right: 1 },
-      winningTeam: true,
-      createdAt: "2024-02-13T13:00:53.600Z",
-      updatedAt: "2024-02-13T13:00:53.600Z",
-      demoId: "e35ccb65f480f15ff1f2e6ad0694612d",
-      Players: [
+      id: "63b1c865f89df66ae7a268259dbacf1c",
+      startTime: "2024-02-11T11:37:07.000Z",
+      durationMs: 1202267,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
         {
-          id: 4501929,
-          playerId: 8,
-          name: "Jackzo",
-          teamId: 8,
-          handicap: 0,
-          faction: "Armada",
-          countryCode: "GB",
-          rgbColor: { b: 5, g: 16, r: 255 },
-          rank: 4,
-          skillUncertainty: 2.7,
-          skill: "[27.26]",
-          trueSkill: null,
-          startPos: { x: 3048, y: 177.97933959960938, z: 1984 },
-          clanId: null,
-          trueSkillMuBefore: null,
-          trueSkillSigmaBefore: null,
-          trueSkillMuAfter: null,
-          trueSkillSigmaAfter: null,
-          createdAt: "2024-02-13T13:00:53.634Z",
-          updatedAt: "2024-02-13T13:00:53.642Z",
-          allyTeamId: 1341972,
-          userId: 56540,
+          winningTeam: true,
+          Players: [
+            {
+              name: "Justa5",
+            },
+            {
+              name: "LastShadow23",
+            },
+            {
+              name: "CavinTech",
+            },
+            {
+              name: "deckcommander",
+            },
+            {
+              name: "marty_bird",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "Kcorp",
+            },
+            {
+              name: "400KgBut52OS",
+            },
+          ],
+          AIs: [],
         },
         {
-          id: 4501930,
-          playerId: 14,
-          name: "Erlias",
-          teamId: 14,
-          handicap: 0,
-          faction: "Armada",
-          countryCode: "DE",
-          rgbColor: { b: 179, g: 144, r: 241 },
-          rank: 2,
-          skillUncertainty: 5.14,
-          skill: "[6.66]",
-          trueSkill: null,
-          startPos: { x: 773, y: 178.4901123046875, z: 846 },
-          clanId: null,
-          trueSkillMuBefore: null,
-          trueSkillSigmaBefore: null,
-          trueSkillMuAfter: null,
-          trueSkillSigmaAfter: null,
-          createdAt: "2024-02-13T13:00:53.676Z",
-          updatedAt: "2024-02-13T13:00:53.686Z",
-          allyTeamId: 1341972,
-          userId: 157806,
-        },
-        {
-          id: 4501933,
-          playerId: 15,
-          name: "CheshireRrr",
-          teamId: 15,
-          handicap: 0,
-          faction: "Armada",
-          countryCode: "RU",
-          rgbColor: { b: 47, g: 139, r: 200 },
-          rank: 2,
-          skillUncertainty: 5.91,
-          skill: "[3]",
-          trueSkill: null,
-          startPos: { x: 4299, y: 177.95849609375, z: 1982 },
-          clanId: null,
-          trueSkillMuBefore: null,
-          trueSkillSigmaBefore: null,
-          trueSkillMuAfter: null,
-          trueSkillSigmaAfter: null,
-          createdAt: "2024-02-13T13:00:53.779Z",
-          updatedAt: "2024-02-13T13:00:53.782Z",
-          allyTeamId: 1341972,
-          userId: 87260,
-        },
-        {
-          id: 4501934,
-          playerId: 12,
-          name: "Nexode",
-          teamId: 12,
-          handicap: 0,
-          faction: "Cortex",
-          countryCode: "BE",
-          rgbColor: { b: 164, g: 238, r: 252 },
-          rank: 3,
-          skillUncertainty: 2.74,
-          skill: "[14.71]",
-          trueSkill: null,
-          startPos: { x: 2814, y: 177.85205078125, z: 750 },
-          clanId: null,
-          trueSkillMuBefore: null,
-          trueSkillSigmaBefore: null,
-          trueSkillMuAfter: null,
-          trueSkillSigmaAfter: null,
-          createdAt: "2024-02-13T13:00:53.809Z",
-          updatedAt: "2024-02-13T13:00:53.813Z",
-          allyTeamId: 1341972,
-          userId: 120230,
-        },
-        {
-          id: 4501935,
-          playerId: 13,
-          name: "Dawn005",
-          teamId: 13,
-          handicap: 0,
-          faction: "Cortex",
-          countryCode: "AU",
-          rgbColor: { b: 40, g: 40, r: 138 },
-          rank: 3,
-          skillUncertainty: 2.6,
-          skill: "[8.68]",
-          trueSkill: null,
-          startPos: { x: 1131, y: 178.4793701171875, z: 1955 },
-          clanId: null,
-          trueSkillMuBefore: null,
-          trueSkillSigmaBefore: null,
-          trueSkillMuAfter: null,
-          trueSkillSigmaAfter: null,
-          createdAt: "2024-02-13T13:00:53.834Z",
-          updatedAt: "2024-02-13T13:00:53.838Z",
-          allyTeamId: 1341972,
-          userId: 90793,
-        },
-        {
-          id: 4501937,
-          playerId: 10,
-          name: "Taras0791",
-          teamId: 10,
-          handicap: 0,
-          faction: "Cortex",
-          countryCode: "UA",
-          rgbColor: { b: 7, g: 97, r: 255 },
-          rank: 3,
-          skillUncertainty: 2.46,
-          skill: "[19.51]",
-          trueSkill: null,
-          startPos: { x: 4199, y: 169.4033203125, z: 616 },
-          clanId: null,
-          trueSkillMuBefore: null,
-          trueSkillSigmaBefore: null,
-          trueSkillMuAfter: null,
-          trueSkillSigmaAfter: null,
-          createdAt: "2024-02-13T13:00:53.890Z",
-          updatedAt: "2024-02-13T13:00:53.893Z",
-          allyTeamId: 1341972,
-          userId: 167545,
-        },
-        {
-          id: 4501941,
-          playerId: 9,
-          name: "[knb]monkerl",
-          teamId: 9,
-          handicap: 0,
-          faction: "Cortex",
-          countryCode: "DE",
-          rgbColor: { b: 0, g: 210, r: 255 },
-          rank: 3,
-          skillUncertainty: 4.3,
-          skill: "[22.16]",
-          trueSkill: null,
-          startPos: { x: 5780, y: 174.80078125, z: 634 },
-          clanId: null,
-          trueSkillMuBefore: null,
-          trueSkillSigmaBefore: null,
-          trueSkillMuAfter: null,
-          trueSkillSigmaAfter: null,
-          createdAt: "2024-02-13T13:00:53.985Z",
-          updatedAt: "2024-02-13T13:00:53.989Z",
-          allyTeamId: 1341972,
-          userId: 161136,
-        },
-        {
-          id: 4501942,
-          playerId: 11,
-          name: "BigTastyKevin",
-          teamId: 11,
-          handicap: 0,
-          faction: "Armada",
-          countryCode: "DE",
-          rgbColor: { b: 137, g: 8, r: 248 },
-          rank: 2,
-          skillUncertainty: 7.89,
-          skill: "[18.02]",
-          trueSkill: null,
-          startPos: { x: 5451, y: 172.873046875, z: 2016 },
-          clanId: null,
-          trueSkillMuBefore: null,
-          trueSkillSigmaBefore: null,
-          trueSkillMuAfter: null,
-          trueSkillSigmaAfter: null,
-          createdAt: "2024-02-13T13:00:54.006Z",
-          updatedAt: "2024-02-13T13:00:54.009Z",
-          allyTeamId: 1341972,
-          userId: 199350,
+          winningTeam: false,
+          Players: [
+            {
+              name: "Punjiba",
+            },
+            {
+              name: "badbot",
+            },
+            {
+              name: "Wind",
+            },
+            {
+              name: "matowuut",
+            },
+            {
+              name: "BakeMedo",
+            },
+            {
+              name: "Karolson",
+            },
+            {
+              name: "Chronopolize",
+            },
+            {
+              name: "Serotos",
+            },
+          ],
+          AIs: [],
         },
       ],
-      AIs: [],
-    },
-  ],
-  Spectators: [
-    {
-      id: 1162596,
-      playerId: 16,
-      name: "adswrx",
-      countryCode: "AU",
-      rank: 3,
-      skillUncertainty: 2.18,
-      skill: "[21.59]",
-      createdAt: "2024-02-13T13:00:54.095Z",
-      updatedAt: "2024-02-13T13:00:54.101Z",
-      demoId: "e35ccb65f480f15ff1f2e6ad0694612d",
-      userId: 181922,
     },
     {
-      id: 1162597,
-      playerId: 18,
-      name: "DrCox",
-      countryCode: "RU",
-      rank: 3,
-      skillUncertainty: 6.17,
-      skill: "[12.97]",
-      createdAt: "2024-02-13T13:00:54.120Z",
-      updatedAt: "2024-02-13T13:00:54.124Z",
-      demoId: "e35ccb65f480f15ff1f2e6ad0694612d",
-      userId: 69882,
+      id: "1aacc86529e8662bef9b6affcb4099e1",
+      startTime: "2024-02-11T11:14:34.000Z",
+      durationMs: 1004633,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "fiddler112",
+            },
+            {
+              name: "LastShadow23",
+            },
+            {
+              name: "CavinTech",
+            },
+            {
+              name: "HatENooB",
+            },
+            {
+              name: "deckcommander",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "Chronopolize",
+            },
+            {
+              name: "badbot",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "Punjiba",
+            },
+            {
+              name: "Kcorp",
+            },
+            {
+              name: "400KgBut52OS",
+            },
+            {
+              name: "marty_bird",
+            },
+            {
+              name: "BakeMedo",
+            },
+            {
+              name: "Karolson",
+            },
+            {
+              name: "Justa5",
+            },
+            {
+              name: "BlandUnicorn",
+            },
+          ],
+          AIs: [],
+        },
+      ],
     },
     {
-      id: 1162598,
-      playerId: 19,
-      name: "CalmishPhill",
-      countryCode: "US",
-      rank: 2,
-      skillUncertainty: 6.19,
-      skill: "[11.54]",
-      createdAt: "2024-02-13T13:00:54.148Z",
-      updatedAt: "2024-02-13T13:00:54.152Z",
-      demoId: "e35ccb65f480f15ff1f2e6ad0694612d",
-      userId: 200298,
+      id: "8f33c8654f2e2001f98a17c77b24a6d8",
+      startTime: "2024-02-11T02:40:15.000Z",
+      durationMs: 775267,
+      Map: {
+        fileName: "the_cold_place_BAR_v1.1",
+        scriptName: "The Cold Place BAR v1.1",
+      },
+      AllyTeams: [
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "Pyrosaurus_Rex",
+            },
+            {
+              name: "plutonic",
+            },
+            {
+              name: "tidy_yak",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "PoisonedMango",
+            },
+            {
+              name: "Sargentkickass",
+            },
+            {
+              name: "__Bear__",
+            },
+          ],
+          AIs: [],
+        },
+      ],
     },
     {
-      id: 1162599,
-      playerId: 20,
-      name: "KruZar",
-      countryCode: "??",
-      rank: 3,
-      skillUncertainty: 3.49,
-      skill: "[3.41]",
-      createdAt: "2024-02-13T13:00:54.182Z",
-      updatedAt: "2024-02-13T13:00:54.186Z",
-      demoId: "e35ccb65f480f15ff1f2e6ad0694612d",
-      userId: 190969,
+      id: "122ec8650f05c7c53fb24e1f83ec6c30",
+      startTime: "2024-02-11T02:16:50.000Z",
+      durationMs: 1122667,
+      Map: {
+        fileName: "the_cold_place_BAR_v1.1",
+        scriptName: "The Cold Place BAR v1.1",
+      },
+      AllyTeams: [
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "Pyrosaurus_Rex",
+            },
+            {
+              name: "plutonic",
+            },
+            {
+              name: "tidy_yak",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "PoisonedMango",
+            },
+            {
+              name: "Premalone15",
+            },
+            {
+              name: "__Bear__",
+            },
+          ],
+          AIs: [],
+        },
+      ],
     },
     {
-      id: 1162600,
-      playerId: 17,
-      name: "iHATEkpop",
-      countryCode: "??",
-      rank: 2,
-      skillUncertainty: 8.33,
-      skill: "[16.67]",
-      createdAt: "2024-02-13T13:00:54.204Z",
-      updatedAt: "2024-02-13T13:00:54.207Z",
-      demoId: "e35ccb65f480f15ff1f2e6ad0694612d",
-      userId: 195782,
+      id: "7a7ac765f7c0f06f6310c22ed0686d89",
+      startTime: "2024-02-10T13:30:34.000Z",
+      durationMs: 2673800,
+      Map: {
+        fileName: "all_that_glitters_v2.1",
+        scriptName: "All That Glitters v2.1",
+      },
+      AllyTeams: [
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "Whey_eater",
+            },
+            {
+              name: "Makemake",
+            },
+            {
+              name: "kiansadr",
+            },
+            {
+              name: "urbanninja000",
+            },
+            {
+              name: "Lightwolf",
+            },
+            {
+              name: "[ZXD]Faant",
+            },
+            {
+              name: "Prime_Federator",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "Arhimodon",
+            },
+            {
+              name: "[ZXD]ToddAndChips",
+            },
+            {
+              name: "DooDooLicker6",
+            },
+            {
+              name: "malpertuis",
+            },
+            {
+              name: "Toukitsu",
+            },
+            {
+              name: "Ritual",
+            },
+            {
+              name: "FelixJarl",
+            },
+            {
+              name: "BuddZIE317",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "1f73c7659c6145391754a43f1034e076",
+      startTime: "2024-02-10T12:59:11.000Z",
+      durationMs: 1439333,
+      Map: {
+        fileName: "all_that_glitters_v2.1",
+        scriptName: "All That Glitters v2.1",
+      },
+      AllyTeams: [
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "Raigeki",
+            },
+            {
+              name: "DraconicViper",
+            },
+            {
+              name: "Makemake",
+            },
+            {
+              name: "Arhimodon",
+            },
+            {
+              name: "BuddZIE317",
+            },
+            {
+              name: "[ZXD]ToddAndChips",
+            },
+            {
+              name: "[ZXD]Faant",
+            },
+            {
+              name: "Yamee",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "reddragon2010",
+            },
+            {
+              name: "Lightwolf",
+            },
+            {
+              name: "DooDooLicker6",
+            },
+            {
+              name: "urbanninja000",
+            },
+            {
+              name: "Toukitsu",
+            },
+            {
+              name: "Ritual",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "DiLLiGAF23",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "ca69c76584a0b4b16b6c27c6671e3dee",
+      startTime: "2024-02-10T12:19:22.000Z",
+      durationMs: 1718000,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "Krarilotus",
+            },
+            {
+              name: "fiddler112",
+            },
+            {
+              name: "Dawn005",
+            },
+            {
+              name: "MaxMustard",
+            },
+            {
+              name: "BubSchnoods",
+            },
+            {
+              name: "N0Problem",
+            },
+            {
+              name: "herrmotz",
+            },
+            {
+              name: "PLANIAN",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "Minibee2277",
+            },
+            {
+              name: "Leszek12191",
+            },
+            {
+              name: "Badurack",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "Anoromi",
+            },
+            {
+              name: "PancakeBatterBlaster",
+            },
+            {
+              name: "hiladoy",
+            },
+            {
+              name: "urbanninja000",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "8f16c765f5a273e14b23727dd698e083",
+      startTime: "2024-02-10T06:24:15.000Z",
+      durationMs: 1630533,
+      Map: {
+        fileName: "erebos_lakes_v1.0",
+        scriptName: "Erebos Lakes v1.0",
+      },
+      AllyTeams: [
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "[peeps]JAWSMUNCH",
+            },
+            {
+              name: "aleee",
+            },
+            {
+              name: "ThrobbinTony",
+            },
+            {
+              name: "Goosejuice",
+            },
+            {
+              name: "danilocspedro",
+            },
+            {
+              name: "Mozziea",
+            },
+            {
+              name: "GamerGuy69",
+            },
+            {
+              name: "WarlordChewy",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "zealo",
+            },
+            {
+              name: "feller",
+            },
+            {
+              name: "BilboTBaggins",
+            },
+            {
+              name: "xabre",
+            },
+            {
+              name: "Kryptos",
+            },
+            {
+              name: "PoisonedMango",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "urbanninja000",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "c310c765eb9f579f318a0763cdbed782",
+      startTime: "2024-02-10T05:59:31.000Z",
+      durationMs: 1193033,
+      Map: {
+        fileName: "jade_empress_1.3",
+        scriptName: "Jade Empress 1.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "[peeps]JAWSMUNCH",
+            },
+            {
+              name: "aleee",
+            },
+            {
+              name: "ThrobbinTony",
+            },
+            {
+              name: "Goosejuice",
+            },
+            {
+              name: "danilocspedro",
+            },
+            {
+              name: "Mozziea",
+            },
+            {
+              name: "Void_Aurora",
+            },
+            {
+              name: "BeastEater69",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "zealo",
+            },
+            {
+              name: "urbanninja000",
+            },
+            {
+              name: "EvilManifested",
+            },
+            {
+              name: "feller",
+            },
+            {
+              name: "PoisonedMango",
+            },
+            {
+              name: "CriscoCube",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "GamerGuy69",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "6b08c7658d102bf119908c25be3ab86d",
+      startTime: "2024-02-10T05:23:55.000Z",
+      durationMs: 1603533,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "bladerunner",
+            },
+            {
+              name: "hiladoy",
+            },
+            {
+              name: "tkejeremy",
+            },
+            {
+              name: "Agonist",
+            },
+            {
+              name: "ALLPROABE",
+            },
+            {
+              name: "GamerGuy69",
+            },
+            {
+              name: "G0DeaterXx",
+            },
+            {
+              name: "Mons",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "Gaspard",
+            },
+            {
+              name: "urbanninja000",
+            },
+            {
+              name: "Koagant",
+            },
+            {
+              name: "HatENooB",
+            },
+            {
+              name: "Fluffyy",
+            },
+            {
+              name: "PoisonedMango",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "DoseMe",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "ba30c6652d8f73aea54f0b79493423c5",
+      startTime: "2024-02-09T14:03:38.000Z",
+      durationMs: 1728600,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "Knock_Knock",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "Minibee2277",
+            },
+            {
+              name: "losscreen",
+            },
+            {
+              name: "beastypet",
+            },
+            {
+              name: "Godzilla[GTR_R32]",
+            },
+            {
+              name: "Renasonz",
+            },
+            {
+              name: "REDDDDDDDD",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "[CTMS]Slashomega",
+            },
+            {
+              name: "RoboAlphaChad",
+            },
+            {
+              name: "synergy42",
+            },
+            {
+              name: "Yenvon",
+            },
+            {
+              name: "deckcommander",
+            },
+            {
+              name: "Andavarus",
+            },
+            {
+              name: "Pinkgeneral",
+            },
+            {
+              name: "orzoon",
+            },
+          ],
+          AIs: [],
+        },
+      ],
+    },
+    {
+      id: "87efc565eaeae9865d7b9424c804c698",
+      startTime: "2024-02-09T09:25:27.000Z",
+      durationMs: 2746400,
+      Map: {
+        fileName: "supreme_isthmus_v1.6.3",
+        scriptName: "Supreme Isthmus v1.6.3",
+      },
+      AllyTeams: [
+        {
+          winningTeam: false,
+          Players: [
+            {
+              name: "Fatpanda",
+            },
+            {
+              name: "UselesS15",
+            },
+            {
+              name: "Megax780",
+            },
+            {
+              name: "Madsocks",
+            },
+            {
+              name: "BARkeeper",
+            },
+            {
+              name: "Zeeburg",
+            },
+            {
+              name: "mfrakhman",
+            },
+            {
+              name: "SamsoniteMines",
+            },
+          ],
+          AIs: [],
+        },
+        {
+          winningTeam: true,
+          Players: [
+            {
+              name: "No_Winning",
+            },
+            {
+              name: "Barakamont",
+            },
+            {
+              name: "Swiftn",
+            },
+            {
+              name: "IamDave",
+            },
+            {
+              name: "Cryocore",
+            },
+            {
+              name: "X1x2",
+            },
+            {
+              name: "__Bear__",
+            },
+            {
+              name: "Dachs",
+            },
+          ],
+          AIs: [],
+        },
+      ],
     },
   ],
 };

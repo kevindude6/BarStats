@@ -122,15 +122,13 @@ const countMaps = (remappedData) => {
     }
     out[cleanName].count += 1;
     out[cleanName].wins += replay.didWin ? 1 : 0;
-    out[cleanName].startTimes.push(replay.startTime);
+    out[cleanName].startTimes.push(new Date(replay.startTime));
     out[cleanName].durations.push(replay.durationMs);
     return out;
   }, {});
 
   for (const mapName in outObj) {
-    outObj[mapName].startTimes.sort((a, b) => {
-      return new Date(b) - new Date(a);
-    });
+    outObj[mapName].startTimes.sort();
   }
 
   for (const mapName in outObj) {
