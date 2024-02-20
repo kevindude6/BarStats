@@ -7,7 +7,7 @@ export const AwardsOverview = (props) => {
     <div className="card w-full bg-base-100 shadow-xl">
       <div className="card-body">
         <h2 className="card-title text-3xl font-extrabold text-secondary">Awards</h2>
-        <div className="stats w-full h-full text-3xl ">
+        <div className="stats border-solid border-0 border-base-200 w-full h-full text-3xl ">
           <div className="stat">
             <div className="stat-title">Cows earned </div>
             <div className="stat-value text-primary text-6xl">{data.awardStats.cows}</div>
