@@ -10,6 +10,7 @@ import { FactionStats } from "./components/FactionStats.jsx";
 import { usePlayerData } from "./helper/usePlayerData.jsx";
 import { FactionGamesChart } from "./components/FactionGamesChart.jsx";
 import { MapStatsOverview } from "./components/MapStatsOverview.jsx";
+import { AwardsOverview } from "./components/AwardsOverview.jsx";
 
 function App() {
   const [targetPlayer, setTargetPlayer] = useState("");
@@ -45,6 +46,9 @@ function App() {
             </div>
             <div className="col-span-12">
               <MapStatsOverview data={processedData} />
+            </div>
+            <div className="col-span-12">
+              <AwardsOverview data={processedData} />
             </div>
           </>
         )}

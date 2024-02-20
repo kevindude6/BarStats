@@ -31,6 +31,7 @@ export const usePlayerData = (targetPlayerId) => {
       processedData.winStats = findWinLoss(receivedData, playerId);
       processedData.factionStats = countFactions(processedReplays);
       processedData.mapStats = countMaps(processedReplays);
+      processedData.awardStats = countAwards(processedReplays);
 
       processedData.hasData = true;
       processedData.isLoading = false;
@@ -145,19 +146,16 @@ const countMaps = (remappedData) => {
   return outObj;
 };
 
-const findTargetPlayerId = (gameData, targetPlayer) => {
-  for (const team of gameData.AllyTeams) {
-    const player = team.Players.find((p) => p.name == targetPlayer);
-    if (player != null) return player.playerId;
-  }
-  return -1;
+const countAwards = (remappedData) => {
+  const outObj = {};
+  outObj.cows = remappedData.filter((c) => c.cow === true).length;
+  outObj.econDestroyedAwards = remappedData.filter((c) => c.econDestroyedAward === true).length;
+  outObj.unitsDestroyedAwards = remappedData.filter((c) => c.unitsDestroyedAward === true).length;
+  outObj.resourceEfficiencyAwards = remappedData.filter((c) => c.resourceEfficiencyAward === true).length;
+
+  return outObj;
 };
-const findTargetPlayerObj = (gameData, targetPlayer) => {
-  for (const team of gameData.AllyTeams) {
-    const player = team.Players.find((p) => p.name == targetPlayer);
-    if (player != null) return player;
-  }
-};
+
 // returns a data row
 const processReplay = (gameData, targetPlayer) => {
   // initialize output
@@ -186,15 +184,6 @@ const processReplay = (gameData, targetPlayer) => {
   outObj.mapName = gameData.Map.scriptName;
   return outObj;
 };
-
-/*
-const addTargetPlayerIds = (replayData, targetPlayer) => {
-  replayData.forEach((replay) => {
-    const foundId = findTargetPlayerId(replay, targetPlayer);
-    replay.TARGETPLAYER = foundId;
-  });
-};
-*/
 
 // dataobj needs
 // didWin
