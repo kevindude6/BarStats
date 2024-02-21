@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
+import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
 
 export const PlayerTable = (props) => {
   const { data } = props;
@@ -6,6 +7,13 @@ export const PlayerTable = (props) => {
   const [sortField, setSortField] = useState("name");
   const [sortDir, setSortDir] = useState("ASC");
 
+  const requestSort = (field) => {
+    if (sortField === field) {
+      setSortDir(sortDir === "ASC" ? "DESC" : "ASC");
+    } else {
+      setSortField(field);
+    }
+  };
   const compareFunc = (a, b) => {
     if (a[sortField] < b[sortField]) {
       return sortDir === "ASC" ? -1 : 1;
@@ -22,16 +30,33 @@ export const PlayerTable = (props) => {
     return arr;
   }, [data, sortField, sortDir]);
 
+  const getIcon = (field) => {
+    if (field !== sortField) return <></>;
+
+    return sortDir === "ASC" ? (
+      <AiOutlineArrowUp className="float-right" />
+    ) : (
+      <AiOutlineArrowDown className="float-right" />
+    );
+  };
+
+  const columnHeader = (name, field) => (
+    <th className="cursor-pointer hover:bg-base-200 w-1/5" onClick={() => requestSort(field)}>
+      {name}
+      {getIcon(field)}
+    </th>
+  );
+
   return (
     <div className="overflow-x-auto">
       <table className="table">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Ally Games</th>
-            <th>Wins With</th>
-            <th>Enemy Games</th>
-            <th>Wins Against</th>
+            {columnHeader("Name", "name")}
+            {columnHeader("Ally Games", "allyCount")}
+            {columnHeader("Wins With", "winWith")}
+            {columnHeader("Enemy Games", "enemyCount")}
+            {columnHeader("Wins Against", "winAgainst")}
           </tr>
         </thead>
         <tbody>
