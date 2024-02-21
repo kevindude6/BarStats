@@ -32,6 +32,7 @@ export const usePlayerData = (targetPlayerId) => {
       processedData.factionStats = countFactions(processedReplays);
       processedData.mapStats = countMaps(processedReplays);
       processedData.awardStats = countAwards(processedReplays);
+      processedData.playerData = countPlayers(processedReplays);
 
       processedData.hasData = true;
       processedData.isLoading = false;
@@ -156,11 +157,36 @@ const countAwards = (remappedData) => {
   return outObj;
 };
 
+const countPlayers = (remappedData) => {
+  const outObj = { playerCounts: {} };
+  for (const replay of remappedData) {
+    for (const ally of replay.allies) {
+      if (!(ally in outObj.playerCounts)) {
+        outObj.playerCounts[ally] = { name: ally, allyCount: 0, enemyCount: 0, winAgainst: 0, winWith: 0 };
+      }
+      outObj.playerCounts[ally].allyCount += 1;
+      if (replay.didWin) {
+        outObj.playerCounts[ally].winWith += 1;
+      }
+    }
+    for (const enemy of replay.enemies) {
+      if (!(enemy in outObj.playerCounts)) {
+        outObj.playerCounts[enemy] = { name: enemy, allyCount: 0, enemyCount: 0, winAgainst: 0, winWith: 0 };
+      }
+      outObj.playerCounts[enemy].enemyCount += 1;
+      if (replay.didWin) {
+        outObj.playerCounts[enemy].winAgainst += 1;
+      }
+    }
+  }
+  return outObj;
+};
 // returns a data row
 const processReplay = (gameData, targetPlayer) => {
   // initialize output
   const outObj = { replayId: gameData.id, startTime: gameData.startTime, durationMs: gameData.durationMs };
 
+  outObj.enemies = [];
   // find player / did team win
   for (const team of gameData.AllyTeams) {
     const player = team.Players.find((p) => p.name == targetPlayer);
@@ -169,7 +195,10 @@ const processReplay = (gameData, targetPlayer) => {
       outObj.didWin = team.winningTeam;
       outObj.startPos = player.startPos;
       outObj.faction = player.faction;
-      break;
+
+      outObj.allies = team.Players.filter((v) => v.name != targetPlayer).map((v) => v.name);
+    } else {
+      team.Players.map((v) => v.name).forEach((v) => outObj.enemies.push(v));
     }
   }
 
