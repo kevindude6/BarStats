@@ -187,6 +187,7 @@ const processReplay = (gameData, targetPlayer) => {
   const outObj = { replayId: gameData.id, startTime: gameData.startTime, durationMs: gameData.durationMs };
 
   outObj.enemies = [];
+  outObj.allies = [];
   // find player / did team win
   for (const team of gameData.AllyTeams) {
     const player = team.Players.find((p) => p.name == targetPlayer);
