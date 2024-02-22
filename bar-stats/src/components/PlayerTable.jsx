@@ -51,7 +51,7 @@ export const PlayerTable = (props) => {
   );
 
   const nextPage = () => {
-    const maxPage = sortedData.length / PAGESIZE;
+    const maxPage = Math.floor(sortedData.length / PAGESIZE);
     setPage(Math.min(maxPage, page + 1));
   };
   const prevPage = () => {
@@ -86,7 +86,7 @@ export const PlayerTable = (props) => {
         <button className="mt-1 mr-2" onClick={() => prevPage()}>
           <AiOutlineArrowLeft />
         </button>
-        <p className="flex-grow-0">
+        <p className="flex-grow-0 w-20 text-center">
           {page * PAGESIZE + 1} - {(page + 1) * PAGESIZE}
         </p>
         <button className="mt-1 ml-2" onClick={() => nextPage()}>
