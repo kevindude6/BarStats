@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useMemo } from "react";
-import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
+import { AiOutlineArrowDown, AiOutlineArrowUp, AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+
+const PAGESIZE = 15;
 
 export const PlayerTable = (props) => {
   const { data } = props;
 
   const [sortField, setSortField] = useState("name");
   const [sortDir, setSortDir] = useState("ASC");
+  const [page, setPage] = useState(0);
 
   const requestSort = (field) => {
     if (sortField === field) {
@@ -47,6 +50,14 @@ export const PlayerTable = (props) => {
     </th>
   );
 
+  const nextPage = () => {
+    const maxPage = sortedData.length / PAGESIZE;
+    setPage(Math.min(maxPage, page + 1));
+  };
+  const prevPage = () => {
+    setPage(Math.max(0, page - 1));
+  };
+
   return (
     <div className="overflow-x-auto">
       <table className="table">
@@ -60,7 +71,7 @@ export const PlayerTable = (props) => {
           </tr>
         </thead>
         <tbody>
-          {sortedData.map((v) => (
+          {sortedData.slice(page * PAGESIZE, (page + 1) * PAGESIZE).map((v) => (
             <tr key={v.name}>
               <td>{v.name}</td>
               <td>{v.allyCount}</td>
@@ -71,6 +82,17 @@ export const PlayerTable = (props) => {
           ))}
         </tbody>
       </table>
+      <div className="flex w-full justify-end items-center">
+        <button className="mt-1 mr-2" onClick={() => prevPage()}>
+          <AiOutlineArrowLeft />
+        </button>
+        <p className="flex-grow-0">
+          {page * PAGESIZE + 1} - {(page + 1) * PAGESIZE}
+        </p>
+        <button className="mt-1 ml-2" onClick={() => nextPage()}>
+          <AiOutlineArrowRight />
+        </button>
+      </div>
     </div>
   );
 };
