@@ -14,29 +14,35 @@ export const usePlayerData = (targetPlayerId) => {
       const initialData = {
         hasData: false,
         isLoading: true,
+        loadingCurrent: 0,
+        loadingAll: 0,
+        loadingFeedback: "",
       };
       setProcessedData(initialData);
 
       // This will be a query
       const receivedData = mockDataForPlayer.data;
 
+      setProcessedData({ ...processedData, loadingFeedback: "Querying Replays..." });
       const allReplayIds = receivedData.map((game) => game.id);
-      const allReplayData = await queryAllReplays(allReplayIds, null);
+      const allReplayData = await queryAllReplays(allReplayIds, null, setProcessedData);
 
+      setProcessedData({ ...processedData, loadingFeedback: "Analyzing Replays..." });
       const processedReplays = Object.values(allReplayData).map((replay) => processReplay(replay, playerId));
 
       //downloadData(allReplayData);
       // Process data
-      const processedData = {};
-      processedData.winStats = findWinLoss(receivedData, playerId);
-      processedData.factionStats = countFactions(processedReplays);
-      processedData.mapStats = countMaps(processedReplays);
-      processedData.awardStats = countAwards(processedReplays);
-      processedData.playerData = countPlayers(processedReplays);
+      setProcessedData({ ...processedData, loadingFeedback: "Doing Math..." });
+      const outputData = {};
+      outputData.winStats = findWinLoss(receivedData, playerId);
+      outputData.factionStats = countFactions(processedReplays);
+      outputData.mapStats = countMaps(processedReplays);
+      outputData.awardStats = countAwards(processedReplays);
+      outputData.playerData = countPlayers(processedReplays);
 
-      processedData.hasData = true;
-      processedData.isLoading = false;
-      setProcessedData(processedData);
+      outputData.hasData = true;
+      outputData.isLoading = false;
+      setProcessedData(outputData);
     };
 
     if (targetPlayerId != "") fetchAndProcess(targetPlayerId);
@@ -45,7 +51,7 @@ export const usePlayerData = (targetPlayerId) => {
   return processedData;
 };
 
-const queryAllReplays = async (allReplayIds, outputObj) => {
+const queryAllReplays = async (allReplayIds, outputObj, setData) => {
   if (outputObj == null || outputObj == undefined) outputObj = {};
   for (let i = 0; i < allReplayIds.length; i += BATCHSIZE) {
     const endIndex = Math.min(i + BATCHSIZE, allReplayIds.length - 1);
@@ -60,6 +66,12 @@ const queryAllReplays = async (allReplayIds, outputObj) => {
     const jsonPromises = responses.map((response) => response.json());
     const details = await Promise.all(jsonPromises);
     details.forEach((detail) => (outputObj[detail.id] = detail));
+    setData({
+      hasData: false,
+      isLoading: true,
+      loadingCurrent: i + BATCHSIZE,
+      loadingAll: allReplayIds.length,
+    });
   }
   return outputObj;
 };

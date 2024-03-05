@@ -22,8 +22,12 @@ function App() {
       <SearchBar setPlayerId={setTargetPlayer}></SearchBar>
       <div className="container mx-auto my-40 grid grid-cols-12 gap-4">
         {processedData.isLoading && !processedData.hasData && (
-          <div className="col-span-12 h-96 flex justify-center">
+          <div className="col-span-12 h-96 flex flex-col justify-center items-center">
             <div className="loading loading-dots loading-lg"></div>
+            <h2>
+              Loading {processedData.loadingCurrent} / {processedData.loadingAll}
+            </h2>
+            <h2>{processedData.loadingFeedback}</h2>
           </div>
         )}
         {processedData.hasData && (
