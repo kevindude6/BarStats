@@ -21,6 +21,11 @@ function App() {
     <>
       <SearchBar setPlayerId={setTargetPlayer}></SearchBar>
       <div className="container mx-auto my-40 grid grid-cols-12 gap-4">
+        {processedData.isLoading && !processedData.hasData && (
+          <div className="col-span-12 h-96 flex justify-center">
+            <div className="loading loading-dots loading-lg"></div>
+          </div>
+        )}
         {processedData.hasData && (
           <>
             <div className="col-span-4 h-56">
