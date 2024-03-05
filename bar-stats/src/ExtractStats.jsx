@@ -1,13 +1,10 @@
-export const findWinLoss = (data, targetPlayer) => {
-  const wins = data.filter((game) => {
-    const winTeam = game.AllyTeams.find((team) => team.winningTeam === true);
-    return winTeam.Players.find((player) => player.name === targetPlayer);
-  });
+export const findWinLoss = (processedReplays) => {
+  const wins = processedReplays.filter((game) => game.didWin === true);
   const winCount = wins.length;
   return {
     wins: winCount,
-    games: data.length,
-    losses: data.length-winCount,
-    winRatio: winCount/data.length,
+    games: processedReplays.length,
+    losses: processedReplays.length - winCount,
+    winRatio: winCount / processedReplays.length,
   };
-}
+};

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { findWinLoss } from "../ExtractStats";
 import { mockDataForPlayer } from "../mockData.js";
-import { GetReplay } from "../ApiEndpoints";
+import { GetReplay, GetForPlayer } from "../ApiEndpoints";
 import { extent, mode, sum, mean, median, quantile, variance, deviation } from "d3-array";
 
-const BATCHSIZE = 5;
+const BATCHSIZE = 10;
 
 export const usePlayerData = (targetPlayerId) => {
   const [processedData, setProcessedData] = useState({ hasData: false, isLoading: false });
@@ -16,25 +16,30 @@ export const usePlayerData = (targetPlayerId) => {
         isLoading: true,
         loadingCurrent: 0,
         loadingAll: 0,
-        loadingFeedback: "",
+        loadingFeedback: "Getting list of all replays...",
       };
       setProcessedData(initialData);
 
       // This will be a query
-      const receivedData = mockDataForPlayer.data;
+      //const receivedData = mockDataForPlayer.data;
+      const replayQuery = await GetForPlayer(playerId);
+      const receivedReplays = await replayQuery.json();
+      let receivedData = receivedReplays.data; //.slice(0, 10);
+      //receivedData = receivedData.concat(receivedReplays.data.slice(-10));
 
       setProcessedData({ ...processedData, loadingFeedback: "Querying Replays..." });
       const allReplayIds = receivedData.map((game) => game.id);
       const allReplayData = await queryAllReplays(allReplayIds, null, setProcessedData);
 
+      const playerUserId = getPlayerUserId(playerId, allReplayData[0]); //108724
       setProcessedData({ ...processedData, loadingFeedback: "Analyzing Replays..." });
-      const processedReplays = Object.values(allReplayData).map((replay) => processReplay(replay, playerId));
+      const processedReplays = allReplayData.map((replay) => processReplay(replay, playerUserId));
 
       //downloadData(allReplayData);
       // Process data
       setProcessedData({ ...processedData, loadingFeedback: "Doing Math..." });
       const outputData = {};
-      outputData.winStats = findWinLoss(receivedData, playerId);
+      outputData.winStats = findWinLoss(processedReplays);
       outputData.factionStats = countFactions(processedReplays);
       outputData.mapStats = countMaps(processedReplays);
       outputData.awardStats = countAwards(processedReplays);
@@ -52,20 +57,20 @@ export const usePlayerData = (targetPlayerId) => {
 };
 
 const queryAllReplays = async (allReplayIds, outputObj, setData) => {
-  if (outputObj == null || outputObj == undefined) outputObj = {};
+  if (outputObj == null || outputObj == undefined) outputObj = [];
   for (let i = 0; i < allReplayIds.length; i += BATCHSIZE) {
-    const endIndex = Math.min(i + BATCHSIZE, allReplayIds.length - 1);
+    const endIndex = Math.min(i + BATCHSIZE, allReplayIds.length);
     console.log(`querying replays ${i} to ${endIndex}`);
     const promises = [];
     let x = i;
-    while (x <= endIndex) {
+    while (x < endIndex) {
       promises.push(GetReplay(allReplayIds[x]));
       x += 1;
     }
     const responses = await Promise.all(promises);
     const jsonPromises = responses.map((response) => response.json());
     const details = await Promise.all(jsonPromises);
-    details.forEach((detail) => (outputObj[detail.id] = detail));
+    details.forEach((detail) => outputObj.push(detail));
     setData({
       hasData: false,
       isLoading: true,
@@ -125,7 +130,11 @@ const countFactions = (remappedData) => {
 const cleanMapName = (mapName) => {
   const index = mapName.lastIndexOf(" ");
   if (index === -1) return mapName;
-  else return mapName.slice(0, index);
+  else {
+    let cleanedName = mapName.slice(0, index);
+    if (cleanedName === "Supreme Strait") cleanedName = "Supreme Isthmus";
+    return cleanedName;
+  }
 };
 
 const countMaps = (remappedData) => {
@@ -193,8 +202,16 @@ const countPlayers = (remappedData) => {
   }
   return outObj;
 };
+const getPlayerUserId = (playerName, gameData) => {
+  for (const team of gameData.AllyTeams) {
+    const player = team.Players.find((p) => p.name == playerName);
+    if (player != null) {
+      return player.userId;
+    }
+  }
+};
 // returns a data row
-const processReplay = (gameData, targetPlayer) => {
+const processReplay = (gameData, targetPlayerUserId) => {
   // initialize output
   const outObj = { replayId: gameData.id, startTime: gameData.startTime, durationMs: gameData.durationMs };
 
@@ -202,14 +219,14 @@ const processReplay = (gameData, targetPlayer) => {
   outObj.allies = [];
   // find player / did team win
   for (const team of gameData.AllyTeams) {
-    const player = team.Players.find((p) => p.name == targetPlayer);
+    const player = team.Players.find((p) => p.userId == targetPlayerUserId);
     if (player != null) {
       outObj.playerId = player.playerId;
       outObj.didWin = team.winningTeam;
       outObj.startPos = player.startPos;
       outObj.faction = player.faction;
 
-      outObj.allies = team.Players.filter((v) => v.name != targetPlayer).map((v) => v.name);
+      outObj.allies = team.Players.filter((v) => v.userId != targetPlayerUserId).map((v) => v.name);
     } else {
       team.Players.map((v) => v.name).forEach((v) => outObj.enemies.push(v));
     }
