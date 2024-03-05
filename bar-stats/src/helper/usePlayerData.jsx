@@ -24,7 +24,7 @@ export const usePlayerData = (targetPlayerId) => {
       //const receivedData = mockDataForPlayer.data;
       const replayQuery = await GetForPlayer(playerId);
       const receivedReplays = await replayQuery.json();
-      let receivedData = receivedReplays.data; //.slice(0, 10);
+      let receivedData = receivedReplays.data.slice(0, 10);
       //receivedData = receivedData.concat(receivedReplays.data.slice(-10));
 
       setProcessedData({ ...processedData, loadingFeedback: "Querying Replays..." });

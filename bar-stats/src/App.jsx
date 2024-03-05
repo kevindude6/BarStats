@@ -32,7 +32,7 @@ function App() {
         )}
         {processedData.hasData && (
           <>
-            <div className="col-span-4 h-56">
+            <div className="col-span-4 h-56 overflow-hidden">
               <div className="stats shadow w-full h-full">
                 <div className="stat">
                   <WinLossChart data={processedData} />
