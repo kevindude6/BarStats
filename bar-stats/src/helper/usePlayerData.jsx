@@ -21,24 +21,20 @@ export const usePlayerData = (targetPlayerId) => {
       };
       setProcessedData(initialData);
 
-      // This will be a query
-      //const receivedData = mockDataForPlayer.data;
       const replayQuery = await GetForPlayer(playerId);
       const receivedReplays = await replayQuery.json();
       let receivedData = receivedReplays.data.slice(0, LIMIT);
-      //receivedData = receivedData.concat(receivedReplays.data.slice(-10));
 
-      setProcessedData({ ...processedData, loadingFeedback: "Querying Replays..." });
+      setProcessedData({ ...initialData, loadingFeedback: "Querying Replays..." });
       const allReplayIds = receivedData.map((game) => game.id);
       const allReplayData = await queryAllReplays(allReplayIds, null, setProcessedData);
 
       const playerNameDict = {};
 
-      const playerUserId = getPlayerUserId(playerId, allReplayData[0]); //108724
+      const playerUserId = getPlayerUserId(playerId, allReplayData[0]);
       setProcessedData({ ...processedData, loadingFeedback: "Analyzing Replays..." });
       const processedReplays = allReplayData.map((replay) => processReplay(replay, playerUserId, playerNameDict));
 
-      //downloadData(allReplayData);
       // Process data
       setProcessedData({ ...processedData, loadingFeedback: "Doing Math..." });
       const outputData = {};
