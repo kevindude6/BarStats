@@ -24,10 +24,10 @@ export const SearchBar = (props) => {
           placeholder="Enter player id..."
           className="input input-bordered flex-grow"
         ></input>
-        <div className="w-32 flex justify-center items-center text-right text-xl text-base-content font-bold">
-          <p>Match Limit:</p>
-        </div>
-        <div className="w-72 h-full">
+        <div className="w-72 h-full relative">
+          <div className="w-32 absolute top-0 translate-y-[-110%] text-base-content text-xl font-semibold">
+            <p>Match Limit:</p>
+          </div>
           <input
             type="range"
             min={0}
