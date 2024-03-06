@@ -15,11 +15,12 @@ import { PlayerOverview } from "./components/PlayerOverview.jsx";
 
 function App() {
   const [targetPlayer, setTargetPlayer] = useState("");
-  const processedData = usePlayerData(targetPlayer);
+  const [limit, setLimit] = useState(25);
+  const processedData = usePlayerData(targetPlayer, limit);
 
   return (
     <>
-      <SearchBar setPlayerId={setTargetPlayer}></SearchBar>
+      <SearchBar setPlayerId={setTargetPlayer} setLimit={setLimit}></SearchBar>
       <div className="container mx-auto my-40 grid grid-cols-12 gap-4">
         {processedData.isLoading && !processedData.hasData && (
           <div className="col-span-12 h-96 flex flex-col justify-center items-center">

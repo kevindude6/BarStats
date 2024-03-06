@@ -5,13 +5,13 @@ import { GetReplay, GetForPlayer } from "../ApiEndpoints";
 import { extent, mode, sum, mean, median, quantile, variance, deviation } from "d3-array";
 
 const BATCHSIZE = 10;
-const LIMIT = 50;
+//const LIMIT = 50;
 
-export const usePlayerData = (targetPlayerId) => {
+export const usePlayerData = (targetPlayerId, limit) => {
   const [processedData, setProcessedData] = useState({ hasData: false, isLoading: false });
 
   useEffect(() => {
-    const fetchAndProcess = async (playerId) => {
+    const fetchAndProcess = async (playerId, passedLimit) => {
       const initialData = {
         hasData: false,
         isLoading: true,
@@ -23,7 +23,7 @@ export const usePlayerData = (targetPlayerId) => {
 
       const replayQuery = await GetForPlayer(playerId);
       const receivedReplays = await replayQuery.json();
-      let receivedData = receivedReplays.data.slice(0, LIMIT);
+      let receivedData = receivedReplays.data.slice(0, passedLimit);
 
       setProcessedData({ ...initialData, loadingFeedback: "Querying Replays..." });
       const allReplayIds = receivedData.map((game) => game.id);
@@ -50,8 +50,8 @@ export const usePlayerData = (targetPlayerId) => {
       setProcessedData(outputData);
     };
 
-    if (targetPlayerId != "") fetchAndProcess(targetPlayerId);
-  }, [targetPlayerId]);
+    if (targetPlayerId != "") fetchAndProcess(targetPlayerId, limit);
+  }, [targetPlayerId, limit]);
 
   return processedData;
 };
