@@ -24,16 +24,18 @@ export const usePlayerData = (targetPlayerId) => {
       //const receivedData = mockDataForPlayer.data;
       const replayQuery = await GetForPlayer(playerId);
       const receivedReplays = await replayQuery.json();
-      let receivedData = receivedReplays.data.slice(0, 10);
+      let receivedData = receivedReplays.data; //.slice(0, 300);
       //receivedData = receivedData.concat(receivedReplays.data.slice(-10));
 
       setProcessedData({ ...processedData, loadingFeedback: "Querying Replays..." });
       const allReplayIds = receivedData.map((game) => game.id);
       const allReplayData = await queryAllReplays(allReplayIds, null, setProcessedData);
 
+      const playerNameDict = {};
+
       const playerUserId = getPlayerUserId(playerId, allReplayData[0]); //108724
       setProcessedData({ ...processedData, loadingFeedback: "Analyzing Replays..." });
-      const processedReplays = allReplayData.map((replay) => processReplay(replay, playerUserId));
+      const processedReplays = allReplayData.map((replay) => processReplay(replay, playerUserId, playerNameDict));
 
       //downloadData(allReplayData);
       // Process data
@@ -43,7 +45,8 @@ export const usePlayerData = (targetPlayerId) => {
       outputData.factionStats = countFactions(processedReplays);
       outputData.mapStats = countMaps(processedReplays);
       outputData.awardStats = countAwards(processedReplays);
-      outputData.playerData = countPlayers(processedReplays);
+      outputData.playerData = countPlayers(processedReplays, playerNameDict);
+      outputData.playerNameLookup = playerNameDict;
 
       outputData.hasData = true;
       outputData.isLoading = false;
@@ -178,12 +181,18 @@ const countAwards = (remappedData) => {
   return outObj;
 };
 
-const countPlayers = (remappedData) => {
+const countPlayers = (remappedData, playerLookup) => {
   const outObj = { playerCounts: {} };
   for (const replay of remappedData) {
     for (const ally of replay.allies) {
       if (!(ally in outObj.playerCounts)) {
-        outObj.playerCounts[ally] = { name: ally, allyCount: 0, enemyCount: 0, winAgainst: 0, winWith: 0 };
+        outObj.playerCounts[ally] = {
+          name: playerLookup[ally],
+          allyCount: 0,
+          enemyCount: 0,
+          winAgainst: 0,
+          winWith: 0,
+        };
       }
       outObj.playerCounts[ally].allyCount += 1;
       if (replay.didWin) {
@@ -192,7 +201,13 @@ const countPlayers = (remappedData) => {
     }
     for (const enemy of replay.enemies) {
       if (!(enemy in outObj.playerCounts)) {
-        outObj.playerCounts[enemy] = { name: enemy, allyCount: 0, enemyCount: 0, winAgainst: 0, winWith: 0 };
+        outObj.playerCounts[enemy] = {
+          name: playerLookup[enemy],
+          allyCount: 0,
+          enemyCount: 0,
+          winAgainst: 0,
+          winWith: 0,
+        };
       }
       outObj.playerCounts[enemy].enemyCount += 1;
       if (replay.didWin) {
@@ -211,12 +226,19 @@ const getPlayerUserId = (playerName, gameData) => {
   }
 };
 // returns a data row
-const processReplay = (gameData, targetPlayerUserId) => {
+const processReplay = (gameData, targetPlayerUserId, playerLookup) => {
   // initialize output
   const outObj = { replayId: gameData.id, startTime: gameData.startTime, durationMs: gameData.durationMs };
 
   outObj.enemies = [];
   outObj.allies = [];
+
+  const addPlayerToLookup = (player) => {
+    if (!(player.userId in playerLookup)) {
+      playerLookup[player.userId] = player.name;
+    }
+  };
+
   // find player / did team win
   for (const team of gameData.AllyTeams) {
     const player = team.Players.find((p) => p.userId == targetPlayerUserId);
@@ -226,9 +248,12 @@ const processReplay = (gameData, targetPlayerUserId) => {
       outObj.startPos = player.startPos;
       outObj.faction = player.faction;
 
-      outObj.allies = team.Players.filter((v) => v.userId != targetPlayerUserId).map((v) => v.name);
+      const allies = team.Players.filter((v) => v.userId != targetPlayerUserId);
+      allies.forEach((v) => addPlayerToLookup(v));
+      outObj.allies = allies.map((v) => v.userId);
     } else {
-      team.Players.map((v) => v.name).forEach((v) => outObj.enemies.push(v));
+      team.Players.forEach((v) => addPlayerToLookup(v));
+      outObj.enemies = team.Players.map((v) => v.userId);
     }
   }
 
