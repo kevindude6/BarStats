@@ -18,59 +18,74 @@ function App() {
   const [limit, setLimit] = useState(25);
   const processedData = usePlayerData(targetPlayer, limit);
 
+  const DataDisplay = () => {
+    if (!processedData.hasData) return <></>;
+    return (
+      <>
+        <div className="col-span-4 h-56 overflow-hidden">
+          <div className="stats shadow w-full h-full">
+            <div className="stat">
+              <WinLossChart data={processedData} />
+            </div>
+          </div>
+        </div>
+        <div className="col-span-8 h-56">
+          <WinLossStats data={processedData} />
+        </div>
+        <div className="col-span-6 h-56">
+          <FactionStats data={processedData} targetFaction={"Cortex"} />
+        </div>
+        <div className="col-span-6 h-56">
+          <FactionStats data={processedData} targetFaction={"Armada"} />
+        </div>
+        <div className="col-span-6 h-56">
+          <FactionStats data={processedData} targetFaction={"Legion"} />
+        </div>
+        <div className="col-span-6 h-56">
+          <FactionGamesChart data={processedData} />
+        </div>
+        <div className="col-span-12">
+          <MapStatsOverview data={processedData} />
+        </div>
+        <div className="col-span-12">
+          <AwardsOverview data={processedData} />
+        </div>
+        <div className="col-span-12">
+          <PlayerOverview data={processedData} />
+        </div>
+      </>
+    );
+  };
+
+  const LoadingDisplay = () => {
+    if (!processedData.isLoading) return <></>;
+    return (
+      <div className="col-span-12 h-96 flex flex-col justify-center items-center">
+        <div className="loading loading-dots loading-lg"></div>
+        <h2>
+          Loading {processedData.loadingCurrent} / {processedData.loadingAll}
+        </h2>
+        <h2>{processedData.loadingFeedback}</h2>
+      </div>
+    );
+  };
+
+  const ErrorDisplay = () => {
+    if (processedData.error == null || processedData.error === "") return <></>;
+    return (
+      <div className="col-span-12 h-96 flex flex-col justify-center items-center">
+        <h2>Error: {processedData.error}</h2>
+      </div>
+    );
+  };
+
   return (
     <>
       <SearchBar setPlayerId={setTargetPlayer} setLimit={setLimit}></SearchBar>
       <div className="container mx-auto my-40 grid grid-cols-12 gap-4">
-        {processedData.isLoading && !processedData.hasData && (
-          <div className="col-span-12 h-96 flex flex-col justify-center items-center">
-            <div className="loading loading-dots loading-lg"></div>
-            <h2>
-              Loading {processedData.loadingCurrent} / {processedData.loadingAll}
-            </h2>
-            <h2>{processedData.loadingFeedback}</h2>
-          </div>
-        )}
-        {processedData.hasData && (
-          <>
-            <div className="col-span-4 h-56 overflow-hidden">
-              <div className="stats shadow w-full h-full">
-                <div className="stat">
-                  <WinLossChart data={processedData} />
-                </div>
-              </div>
-            </div>
-            <div className="col-span-8 h-56">
-              <WinLossStats data={processedData} />
-            </div>
-            <div className="col-span-6 h-56">
-              <FactionStats data={processedData} targetFaction={"Cortex"} />
-            </div>
-            <div className="col-span-6 h-56">
-              <FactionStats data={processedData} targetFaction={"Armada"} />
-            </div>
-            <div className="col-span-6 h-56">
-              <FactionStats data={processedData} targetFaction={"Legion"} />
-            </div>
-            <div className="col-span-6 h-56">
-              <FactionGamesChart data={processedData} />
-            </div>
-            <div className="col-span-12">
-              <MapStatsOverview data={processedData} />
-            </div>
-            <div className="col-span-12">
-              <AwardsOverview data={processedData} />
-            </div>
-            <div className="col-span-12">
-              <PlayerOverview data={processedData} />
-            </div>
-          </>
-        )}
-        {processedData.error != "" && (
-          <div className="col-span-12 h-96 flex flex-col justify-center items-center">
-            <h2>Error: {processedData.error}</h2>
-          </div>
-        )}
+        <LoadingDisplay />
+        <DataDisplay />
+        <ErrorDisplay />
       </div>
     </>
   );
