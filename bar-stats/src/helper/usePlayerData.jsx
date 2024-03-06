@@ -8,13 +8,14 @@ const BATCHSIZE = 10;
 //const LIMIT = 50;
 
 export const usePlayerData = (targetPlayerId, limit) => {
-  const [processedData, setProcessedData] = useState({ hasData: false, isLoading: false });
+  const [processedData, setProcessedData] = useState({ hasData: false, isLoading: false, error: "" });
 
   useEffect(() => {
     const fetchAndProcess = async (playerId, passedLimit) => {
       const initialData = {
         hasData: false,
         isLoading: true,
+        error: "",
         loadingCurrent: 0,
         loadingAll: 0,
         loadingFeedback: "Getting list of all replays...",
@@ -28,6 +29,11 @@ export const usePlayerData = (targetPlayerId, limit) => {
       setProcessedData({ ...initialData, loadingFeedback: "Querying Replays..." });
       const allReplayIds = receivedData.map((game) => game.id);
       const allReplayData = await queryAllReplays(allReplayIds, null, setProcessedData);
+
+      if (allReplayData.length === 0) {
+        setProcessedData({ ...initialData, isLoading: false, hasData: false, error: "Player not found :(" });
+        return;
+      }
 
       const playerNameDict = {};
 
@@ -47,6 +53,7 @@ export const usePlayerData = (targetPlayerId, limit) => {
 
       outputData.hasData = true;
       outputData.isLoading = false;
+      outputData.error = "";
       setProcessedData(outputData);
     };
 

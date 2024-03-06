@@ -66,6 +66,11 @@ function App() {
             </div>
           </>
         )}
+        {processedData.error != "" && (
+          <div className="col-span-12 h-96 flex flex-col justify-center items-center">
+            <h2>Error: {processedData.error}</h2>
+          </div>
+        )}
       </div>
     </>
   );
