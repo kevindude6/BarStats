@@ -5,6 +5,7 @@ import { GetReplay, GetForPlayer } from "../ApiEndpoints";
 import { extent, mode, sum, mean, median, quantile, variance, deviation } from "d3-array";
 
 const BATCHSIZE = 10;
+const LIMIT = 50;
 
 export const usePlayerData = (targetPlayerId) => {
   const [processedData, setProcessedData] = useState({ hasData: false, isLoading: false });
@@ -24,7 +25,7 @@ export const usePlayerData = (targetPlayerId) => {
       //const receivedData = mockDataForPlayer.data;
       const replayQuery = await GetForPlayer(playerId);
       const receivedReplays = await replayQuery.json();
-      let receivedData = receivedReplays.data; //.slice(0, 300);
+      let receivedData = receivedReplays.data.slice(0, LIMIT);
       //receivedData = receivedData.concat(receivedReplays.data.slice(-10));
 
       setProcessedData({ ...processedData, loadingFeedback: "Querying Replays..." });
@@ -215,6 +216,11 @@ const countPlayers = (remappedData, playerLookup) => {
       }
     }
   }
+  Object.keys(outObj.playerCounts).forEach((playerId) => {
+    const playerObj = outObj.playerCounts[playerId];
+    playerObj.winWithRatio = playerObj.allyCount > 0 ? playerObj.winWith / playerObj.allyCount : "?";
+    playerObj.winAgainstRatio = playerObj.enemyCount > 0 ? playerObj.winAgainst / playerObj.enemyCount : "?";
+  });
   return outObj;
 };
 const getPlayerUserId = (playerName, gameData) => {

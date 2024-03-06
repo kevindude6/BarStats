@@ -44,7 +44,7 @@ export const PlayerTable = (props) => {
   };
 
   const columnHeader = (name, field) => (
-    <th className="cursor-pointer hover:bg-base-200 w-1/5" onClick={() => requestSort(field)}>
+    <th className="cursor-pointer hover:bg-base-200 w-1/5 select-none" onClick={() => requestSort(field)}>
       {name}
       {getIcon(field)}
     </th>
@@ -58,6 +58,11 @@ export const PlayerTable = (props) => {
     setPage(Math.max(0, page - 1));
   };
 
+  const getFormattedPercent = (percent) => {
+    if (percent === "?") return "?";
+    else return (percent * 100).toFixed(2) + "%";
+  };
+
   return (
     <div className="overflow-x-auto">
       <table className="table">
@@ -66,8 +71,10 @@ export const PlayerTable = (props) => {
             {columnHeader("Name", "name")}
             {columnHeader("Ally Games", "allyCount")}
             {columnHeader("Wins With", "winWith")}
+            {columnHeader("Wins With %", "winWithRatio")}
             {columnHeader("Enemy Games", "enemyCount")}
             {columnHeader("Wins Against", "winAgainst")}
+            {columnHeader("Wins Against %", "winAgainstRatio")}
           </tr>
         </thead>
         <tbody>
@@ -76,8 +83,10 @@ export const PlayerTable = (props) => {
               <td>{v.name}</td>
               <td>{v.allyCount}</td>
               <td>{v.winWith}</td>
+              <td>{getFormattedPercent(v.winWithRatio)}</td>
               <td>{v.enemyCount}</td>
               <td>{v.winAgainst}</td>
+              <td>{getFormattedPercent(v.winAgainstRatio)}</td>
             </tr>
           ))}
         </tbody>
