@@ -1,0 +1,2 @@
+[build]
+  command = "GANALYTICS_KEY=$GANALYTICS npm run build"
