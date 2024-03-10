@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { HiQuestionMarkCircle } from "react-icons/hi";
 
 export const SearchBar = (props) => {
   const { setPlayerId, setLimit } = props;
@@ -12,11 +13,17 @@ export const SearchBar = (props) => {
     setLimit(limits[selectedRange]);
   };
 
+  const helpString = "BAR Stats made by Bear. Please contact via discord if you encounter any issues.";
+
   return (
     <div className="fixed top-0 left-0 right-0 px-6 pt-3 h-32 bg-base-100 z-50">
-      <div className="prose w-full">
-        <h2 className="text-base-content">BAR Player Search</h2>
+      <div className="prose w-full flex items-center">
+        <h2 className="text-base-content mb-0">BAR Player Search</h2>
+        <div className="tooltip tooltip-bottom ml-6" data-tip={helpString}>
+          <HiQuestionMarkCircle size="1.5em" className="" />
+        </div>
       </div>
+
       <div className="flex w-full gap-6 mt-2">
         <input
           value={inputContent}
