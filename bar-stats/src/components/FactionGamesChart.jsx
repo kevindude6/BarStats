@@ -17,7 +17,7 @@ export const FactionGamesChart = (props) => {
 
   // this is taken from recharts example
   const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
-    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.35;
     const x = cx + radius * Math.cos(-midAngle * RADIAN);
     const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
@@ -32,7 +32,7 @@ export const FactionGamesChart = (props) => {
     <div className="stats shadow w-full h-full text-3xl">
       <div className="stat">
         <div className="stat-title">Games per Faction</div>
-        <ResponsiveContainer width={"100%"} height={"100%"}>
+        <ResponsiveContainer width={"100%"} height={"100%"} className="text-sm">
           <PieChart width={400} height={400}>
             <Pie
               data={pieData}
