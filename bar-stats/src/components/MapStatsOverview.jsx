@@ -40,13 +40,25 @@ export const MapStatsOverview = (props) => {
       return { range: `${low}-${high}`, count: v.length };
     });
   };
+  const collapseClicked = (e) => {
+    if (e.target === openRadio) {
+      e.target.checked = false;
+      openRadio = null;
+    }
+  };
+  let openRadio = null;
+  const collapseChanged = (e) => {
+    if (e.target.checked === true) {
+      openRadio = e.target;
+    }
+  };
   const createMapArea = (map) => {
     const durStat = map.durationStats;
     const bins = getMapDurationBins(map);
     const barChartData = getDurationBarChart(bins);
     return (
       <div key={map.cleanName} className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" />
+        <input type="radio" name="my-accordion-2" onClick={collapseClicked} onChange={collapseChanged} />
         <div className="collapse-title text-xl font-medium">
           {map.cleanName} - {map.wins} wins, {map.count} games ({((map.wins / map.count) * 100).toFixed(0)}%)
         </div>
@@ -92,7 +104,9 @@ export const MapStatsOverview = (props) => {
     <div className="card w-full bg-base-100 shadow-xl">
       <div className="card-body">
         <h2 className="card-title text-3xl font-extrabold text-secondary">Map Stats</h2>
-        {Object.values(data.mapStats).map((map) => createMapArea(map))}
+        {Object.values(data.mapStats)
+          .sort((a, b) => a.count < b.count)
+          .map((map) => createMapArea(map))}
       </div>
     </div>
   );
