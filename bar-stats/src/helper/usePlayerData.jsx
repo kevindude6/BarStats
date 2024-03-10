@@ -110,13 +110,14 @@ const countFactions = (remappedData) => {
       } else if (current.faction === "Armada") {
         accum.Armada += 1;
         if (current.didWin) accum.ArmadaWin += 1;
-      } else if (current.faction === "Legion") {
+      } else if (current.faction === "Unknown") {
+        //legion is unknown
         accum.Legion += 1;
         if (current.didWin) accum.LegionWin += 1;
-      } else if (current.faction === "Unknown") {
+      } /*else if (current.faction === "Unknown") {
         accum.Unknown += 1;
         if (current.didWin) accum.UnknownWin += 1;
-      }
+      }*/
       return accum;
     },
     {
