@@ -15,11 +15,15 @@ export const MapStartDensityPlot = (props) => {
 
     const filename = `url(https://api.bar-rts.com/maps/${data.filename}/texture-mq.jpg)`;
 
+    const targetWidth = 450;
+    const widthScale = targetWidth / mapWidth;
+    const targetHeight = mapHeight * widthScale;
+
     const plot = Plot.plot({
       inset: 0,
       margin: 0,
-      width: 450,
-      height: 450,
+      width: targetWidth,
+      height: targetHeight,
       style: {
         background: filename,
         backgroundSize: "100% 100%",
