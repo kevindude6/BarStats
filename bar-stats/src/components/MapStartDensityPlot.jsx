@@ -39,10 +39,10 @@ export const MapStartDensityPlot = (props) => {
         //Plot.dot(corners, { x: "x", y: "z", fill: "red" }),
       ],
       x: {
-        domain: [mapWidth, 0],
+        domain: [0, mapWidth],
       },
       y: {
-        domain: [0, mapHeight],
+        domain: [mapHeight, 0],
       },
     });
     containerRef.current.append(plot);
