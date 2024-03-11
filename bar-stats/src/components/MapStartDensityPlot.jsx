@@ -23,6 +23,7 @@ export const MapStartDensityPlot = (props) => {
       style: {
         background: filename,
         backgroundSize: "cover",
+        backgroundColor: "gray",
       },
       marks: [
         //Plot.frame(),
