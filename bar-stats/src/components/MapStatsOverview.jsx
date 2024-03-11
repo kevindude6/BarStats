@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { msToString } from "../helper/timeFuncs";
 import { THEMECOLORS } from "../helper/colors";
 import { bin } from "d3-array";
 import { scaleUtc } from "d3-scale";
 import { BarChart, XAxis, YAxis, Tooltip, Bar, ResponsiveContainer } from "recharts";
+import { MapStartDensityPlot } from "./MapStartDensityPlot";
 
 export const MapStatsOverview = (props) => {
   const { data } = props;
+  const [openMapName, setOpenMapName] = useState("");
+  const [openRadio, setOpenRadio] = useState(null);
   if (data.hasData === false) return <p> no data :c </p>;
 
   const thresholdTime = (n) => {
@@ -15,19 +18,6 @@ export const MapStatsOverview = (props) => {
     };
   };
 
-  /*const getMapDateBins = (map) => {
-    //const binner = bin().thresholds(5);
-    //const bins = binner(map.startTimes);
-    const dates = {};
-    map.startTimes.forEach((time) => {
-      const dateString = time.toLocaleDateString("en-GB");
-      if (!(dateString in dates)) dates[dateString] = 0;
-      dates[dateString] += 1;
-    });
-    const output = Object.keys(dates).map((k) => ({ date: k, count: dates[k] }));
-    return output;
-  };
-  */
   const getMapDurationBins = (map) => {
     const binner = bin().thresholds(thresholdTime(10));
     const bins = binner(map.durations);
@@ -43,13 +33,14 @@ export const MapStatsOverview = (props) => {
   const collapseClicked = (e) => {
     if (e.target === openRadio) {
       e.target.checked = false;
-      openRadio = null;
+      setOpenRadio(null);
+      setOpenMapName("");
     }
   };
-  let openRadio = null;
-  const collapseChanged = (e) => {
+  const collapseChanged = (e, mapName) => {
     if (e.target.checked === true) {
-      openRadio = e.target;
+      setOpenRadio(e.target);
+      setOpenMapName(mapName);
     }
   };
   const createMapArea = (map) => {
@@ -58,13 +49,18 @@ export const MapStatsOverview = (props) => {
     const barChartData = getDurationBarChart(bins);
     return (
       <div key={map.cleanName} className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" onClick={collapseClicked} onChange={collapseChanged} />
+        <input
+          type="radio"
+          name="my-accordion-2"
+          onClick={collapseClicked}
+          onChange={(e) => collapseChanged(e, map.cleanName)}
+        />
         <div className="collapse-title text-xl font-medium">
           {map.cleanName} - {map.wins} wins, {map.count} games ({((map.wins / map.count) * 100).toFixed(0)}%)
         </div>
         <div className="collapse-content w-full prose max-w-none">
-          <div className="flex w-full">
-            <div className="flex-grow basis-1/3">
+          <div className="flex w-full gap-8">
+            <div className="flex-grow basis-1/5">
               <h4 className="mt-2">Average game length: </h4>
               <span>{msToString(durStat.mean)}</span>
               <h4>Median game length: </h4>
@@ -78,7 +74,7 @@ export const MapStatsOverview = (props) => {
               <h4>Game length upper quartile: </h4>
               <p>{msToString(durStat.upperQuartile)}</p>
             </div>
-            <div className="flex-grow basis-2/3">
+            <div className="flex-grow basis-1/3">
               <div className="flex flex-col h-full">
                 <div className="text-center ">
                   <h3 className="mt-0">Game Durations</h3>
@@ -94,6 +90,9 @@ export const MapStatsOverview = (props) => {
                   </ResponsiveContainer>
                 </div>
               </div>
+            </div>
+            <div className="flex-grow basis-1/3">
+              <MapStartDensityPlot data={map} shouldRender={openMapName == map.cleanName} />
             </div>
           </div>
         </div>

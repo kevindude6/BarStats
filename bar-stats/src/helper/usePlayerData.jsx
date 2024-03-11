@@ -149,12 +149,25 @@ const countMaps = (remappedData) => {
   const outObj = remappedData.reduce((out, replay) => {
     const cleanName = cleanMapName(replay.mapName);
     if (!(cleanName in out)) {
-      out[cleanName] = { cleanName: cleanName, count: 0, wins: 0, startTimes: [], durations: [] };
+      out[cleanName] = {
+        cleanName: cleanName,
+        count: 0,
+        wins: 0,
+        startTimes: [],
+        durations: [],
+        startPositions: [],
+        filename: undefined,
+      };
     }
     out[cleanName].count += 1;
     out[cleanName].wins += replay.didWin ? 1 : 0;
     out[cleanName].startTimes.push(new Date(replay.startTime));
     out[cleanName].durations.push(replay.durationMs);
+    out[cleanName].startPositions.push(replay.startPos);
+    out[cleanName].mapSize = replay.mapSize;
+
+    if (out[cleanName].filename === undefined) out[cleanName].filename = replay.mapFileName;
+
     return out;
   }, {});
 
@@ -275,7 +288,9 @@ const processReplay = (gameData, targetPlayerUserId, playerLookup) => {
 
   // find map
   outObj.mapId = gameData.Map.id;
+  outObj.mapSize = { width: gameData.Map.width, height: gameData.Map.height };
   outObj.mapName = gameData.Map.scriptName;
+  outObj.mapFileName = gameData.Map.fileName;
   return outObj;
 };
 
