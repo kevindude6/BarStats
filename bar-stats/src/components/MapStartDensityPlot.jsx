@@ -2,12 +2,13 @@ import * as Plot from "@observablehq/plot";
 import { useEffect, useRef } from "react";
 
 export const MapStartDensityPlot = (props) => {
-  const { data } = props;
+  const { data, shouldRender } = props;
   const containerRef = useRef();
 
   useEffect(() => {
     //this might not need to be an effect
     if (data === undefined) return;
+    if (shouldRender === false) return;
 
     const mapWidth = data.mapSize.width * 512;
     const mapHeight = data.mapSize.height * 512;
@@ -17,8 +18,8 @@ export const MapStartDensityPlot = (props) => {
     const plot = Plot.plot({
       inset: 0,
       margin: 0,
-      width: 420,
-      height: 420,
+      width: 450,
+      height: 450,
       style: {
         background: filename,
         backgroundSize: "cover",
@@ -45,7 +46,7 @@ export const MapStartDensityPlot = (props) => {
     });
     containerRef.current.append(plot);
     return () => plot.remove();
-  }, [data]);
+  }, [data, shouldRender]);
 
   return <div className="" ref={containerRef} />;
 };

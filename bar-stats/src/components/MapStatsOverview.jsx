@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { msToString } from "../helper/timeFuncs";
 import { THEMECOLORS } from "../helper/colors";
 import { bin } from "d3-array";
@@ -8,6 +8,8 @@ import { MapStartDensityPlot } from "./MapStartDensityPlot";
 
 export const MapStatsOverview = (props) => {
   const { data } = props;
+  const [openMapName, setOpenMapName] = useState("");
+  const [openRadio, setOpenRadio] = useState(null);
   if (data.hasData === false) return <p> no data :c </p>;
 
   const thresholdTime = (n) => {
@@ -31,13 +33,14 @@ export const MapStatsOverview = (props) => {
   const collapseClicked = (e) => {
     if (e.target === openRadio) {
       e.target.checked = false;
-      openRadio = null;
+      setOpenRadio(null);
+      setOpenMapName("");
     }
   };
-  let openRadio = null;
-  const collapseChanged = (e) => {
+  const collapseChanged = (e, mapName) => {
     if (e.target.checked === true) {
-      openRadio = e.target;
+      setOpenRadio(e.target);
+      setOpenMapName(mapName);
     }
   };
   const createMapArea = (map) => {
@@ -46,7 +49,12 @@ export const MapStatsOverview = (props) => {
     const barChartData = getDurationBarChart(bins);
     return (
       <div key={map.cleanName} className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" onClick={collapseClicked} onChange={collapseChanged} />
+        <input
+          type="radio"
+          name="my-accordion-2"
+          onClick={collapseClicked}
+          onChange={(e) => collapseChanged(e, map.cleanName)}
+        />
         <div className="collapse-title text-xl font-medium">
           {map.cleanName} - {map.wins} wins, {map.count} games ({((map.wins / map.count) * 100).toFixed(0)}%)
         </div>
@@ -84,7 +92,7 @@ export const MapStatsOverview = (props) => {
               </div>
             </div>
             <div className="flex-grow basis-1/3">
-              <MapStartDensityPlot data={map} />
+              <MapStartDensityPlot data={map} shouldRender={openMapName == map.cleanName} />
             </div>
           </div>
         </div>
