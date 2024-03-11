@@ -13,7 +13,7 @@ export const MapStartDensityPlot = (props) => {
     const mapWidth = data.mapSize.width * 512;
     const mapHeight = data.mapSize.height * 512;
 
-    const filename = `url(https://api.bar-rts.com/maps/${data.filename}/texture-thumb.jpg)`;
+    const filename = `url(https://api.bar-rts.com/maps/${data.filename}/texture-mq.jpg)`;
 
     const plot = Plot.plot({
       inset: 0,
@@ -22,27 +22,32 @@ export const MapStartDensityPlot = (props) => {
       height: 450,
       style: {
         background: filename,
-        backgroundSize: "cover",
+        backgroundSize: "100% 100%",
         backgroundColor: "gray",
+        backgroundRepeat: "no-repeat",
+        color: "white",
       },
       marks: [
         //Plot.frame(),
         Plot.density(data.startPositions, {
           x: "x",
-          y: "z",
+          y: (d) => mapHeight - d.z,
           weight: () => 1,
           fill: "density",
           fillOpacity: 0.4,
           thresholds: 10,
         }),
-        Plot.dot(data.startPositions, { x: "x", y: "z", fill: "white", stroke: "black" }),
+        Plot.dot(data.startPositions, { x: "x", y: (d) => mapHeight - d.z, fill: "white", stroke: "black" }),
         //Plot.dot(corners, { x: "x", y: "z", fill: "red" }),
       ],
       x: {
         domain: [0, mapWidth],
+        type: "linear",
       },
       y: {
-        domain: [mapHeight, 0],
+        domain: [0, mapHeight],
+        type: "linear",
+        grid: false,
       },
     });
     containerRef.current.append(plot);
