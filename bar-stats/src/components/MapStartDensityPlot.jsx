@@ -34,7 +34,7 @@ export const MapStartDensityPlot = (props) => {
           fillOpacity: 0.4,
           thresholds: 10,
         }),
-        Plot.dot(data.startPositions, { x: "x", y: "z" }),
+        Plot.dot(data.startPositions, { x: "x", y: "z", fill: "white", stroke: "black" }),
         //Plot.dot(corners, { x: "x", y: "z", fill: "red" }),
       ],
       x: {
