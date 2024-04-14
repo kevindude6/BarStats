@@ -13,7 +13,8 @@ export const SearchBar = (props) => {
     setLimit(limits[selectedRange]);
   };
 
-  const helpString = "BAR Stats made by Bear. Please contact via discord if you encounter any issues.";
+  const helpString =
+    "BAR Stats made by __Bear__. Please contact via discord (@kermode_bear) if you encounter any issues.";
 
   return (
     <div className="fixed top-0 left-0 right-0 px-6 pt-3 h-32 bg-base-100 z-50">
