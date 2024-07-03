@@ -10,13 +10,6 @@ export const PlayerTable = (props) => {
   const [sortDir, setSortDir] = useState("ASC");
   const [page, setPage] = useState(0);
 
-  const requestSort = (field) => {
-    if (sortField === field) {
-      setSortDir(sortDir === "ASC" ? "DESC" : "ASC");
-    } else {
-      setSortField(field);
-    }
-  };
   const compareFunc = (a, b) => {
     if (a[sortField] < b[sortField]) {
       return sortDir === "ASC" ? -1 : 1;
@@ -25,6 +18,14 @@ export const PlayerTable = (props) => {
       return sortDir === "ASC" ? 1 : -1;
     }
     return 0;
+  };
+
+  const requestSort = (field) => {
+    if (sortField === field) {
+      setSortDir(sortDir === "ASC" ? "DESC" : "ASC");
+    } else {
+      setSortField(field);
+    }
   };
 
   const sortedData = useMemo(() => {

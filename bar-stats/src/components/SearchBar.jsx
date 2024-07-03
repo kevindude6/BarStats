@@ -18,11 +18,14 @@ export const SearchBar = (props) => {
 
   return (
     <div className="fixed top-0 left-0 right-0 px-6 pt-3 h-32 bg-base-100 z-50">
-      <div className="prose w-full flex items-center">
+      <div className="prose w-screen flex items-center max-w-none">
         <h2 className="text-base-content mb-0">BAR Player Search</h2>
         <div className="tooltip tooltip-bottom ml-6" data-tip={helpString}>
           <HiQuestionMarkCircle size="1.5em" className="" />
         </div>
+        <h3 className="text-base-content mb-0 mt-0 ml-6 bg-red-300 pl-1 pr-1">
+          <a href="https://www.bar-stats.pro">Consider using the new and improved stats site!</a>
+        </h3>
       </div>
 
       <div className="flex w-full gap-6 mt-2">
